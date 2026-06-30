@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Dice throw</title>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0;">
+
+<script type="text/javascript" charset="utf-8">
+	document.addEventListener('DOMContentLoaded', function () {
+		var menuCapture = document.getElementById("nav").innerHTML;
+		document.getElementById("navmobile").innerHTML = document.getElementById("nav").innerHTML;
+	});
+</script>
+
+
+		
+		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="http://cdn11.editmysite.com/css/sites.css?buildtime=1234" />
+<link rel="stylesheet" type="text/css" href="http://cdn11.editmysite.com/css/old/fancybox.css?buildtime=1234" />
+<link rel="stylesheet" type="text/css" href="files/main_style.css?1782821284" title="wsite-theme-css" />
+<link href='http://cdn2.editmysite.com/fonts/Maven_Pro/font.css?2' rel='stylesheet' type='text/css' />
+
+<style type='text/css'>
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-long .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-large .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+#wsite-title {}
+.wsite-menu-default a {}
+.wsite-menu a {}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline,.wsite-header-section .wsite-content-title {}
+.wsite-headline-paragraph,.wsite-header-section .paragraph {}
+.wsite-button-inner {}
+.wsite-not-footer blockquote {}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+@media screen and (min-width: 767px) {.wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-long .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-large .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+#wsite-title {}
+.wsite-menu-default a {}
+.wsite-menu a {}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline,.wsite-header-section .wsite-content-title {}
+.wsite-headline-paragraph,.wsite-header-section .paragraph {}
+.wsite-button-inner {}
+.wsite-not-footer blockquote {}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+}</style>
+
+		<script src='files/templateArtifacts.js?1743931075'></script>
+<script>
+var STATIC_BASE = '//cdn1.editmysite.com/';
+var ASSETS_BASE = '//cdn11.editmysite.com/';
+var STYLE_PREFIX = 'wsite';
+</script>
+<script src='https://cdn11.editmysite.com/js/jquery-1.8.3.min.js'></script>
+
+<script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script>
+<script src="http://cdn11.editmysite.com/js/site/main.js?buildtime=1234"></script><script type="text/javascript">
+		function initCustomerAccountsModels() {
+					(function(){_W.setup_rpc({"url":"\/ajax\/api\/JsonRPC\/CustomerAccounts\/","actions":{"CustomerAccounts":[{"name":"login","len":2,"multiple":false,"standalone":false},{"name":"logout","len":0,"multiple":false,"standalone":false},{"name":"getSessionDetails","len":0,"multiple":false,"standalone":false},{"name":"getAccountDetails","len":0,"multiple":false,"standalone":false},{"name":"getOrders","len":0,"multiple":false,"standalone":false},{"name":"register","len":4,"multiple":false,"standalone":false},{"name":"emailExists","len":1,"multiple":false,"standalone":false},{"name":"passwordReset","len":1,"multiple":false,"standalone":false},{"name":"passwordUpdate","len":3,"multiple":false,"standalone":false},{"name":"validateSession","len":1,"multiple":false,"standalone":false}]},"namespace":"_W.CustomerAccounts.RPC"});
+_W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":"_W.CustomerAccounts.BackboneModelData","collection_namespace":"_W.CustomerAccounts.BackboneCollectionData","bootstrap_namespace":"_W.CustomerAccounts.BackboneBootstrap","models":{"CustomerAccounts":{"_class":"CustomerAccounts.Model.CustomerAccounts","defaults":null,"validation":null,"types":null,"idAttribute":null,"keydefs":null}},"collections":{"CustomerAccounts":{"_class":"CustomerAccounts.Collection.CustomerAccounts"}},"bootstrap":[]});
+})();
+		}
+		if(document.createEvent && document.addEventListener) {
+			var initEvt = document.createEvent('Event');
+			initEvt.initEvent('customerAccountsModelsInitialized', true, false);
+			document.dispatchEvent(initEvt);
+		} else if(document.documentElement.initCustomerAccountsModels === 0){
+			document.documentElement.initCustomerAccountsModels++
+		}
+		</script>
+		<script type="text/javascript"> _W = _W || {}; _W.securePrefix='UNSET'; </script><script>_W = _W || {};
+			_W.customerLocale = "en_US";
+			_W.storeName = null;
+			_W.isCheckoutReskin = false;
+			_W.storeCountry = "TW";
+			_W.storeCurrency = "USD";
+			_W.storeEuPrivacyPolicyUrl = "";
+			com_currentSite = "239313511692856245";
+			com_userID = "23425996";</script><script type="text/javascript">_W.configDomain = "";</script><script>_W.relinquish && _W.relinquish()</script>
+<script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script><script> _W.themePlugins = [];</script><script type="text/javascript"> _W.recaptchaUrl = "https://www.google.com/recaptcha/api.js"; </script><script type="text/javascript"><!--
+	var IS_ARCHIVE = 1;
+	
+	function initFlyouts(){
+		initPublishedFlyoutMenus(
+			[{"id":"683889504346869554","title":"Home","url":"index.html","target":"","nav_menu":false,"nonclickable":false},{"id":"992754666127193064","title":"About","url":"about.html","target":"","nav_menu":false,"nonclickable":false},{"id":"415759161248215329","title":"Create characters","url":"create-characters.html","target":"","nav_menu":false,"nonclickable":false},{"id":"970432202500041751","title":"Dice throw","url":"dice-throw.html","target":"","nav_menu":false,"nonclickable":false},{"id":"605745235253759488","title":"Combat","url":"combat.html","target":"","nav_menu":false,"nonclickable":false},{"id":"424821511858632472","title":"The Journey","url":"the-journey.html","target":"","nav_menu":false,"nonclickable":false}],
+			"970432202500041751",
+			'',
+			'active',
+			false,
+			{"navigation\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}} class=\"wsite-menu-item-wrap\">\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\t{{#membership_required}}\n\t\t\tdata-membership-required=\"{{.}}\"\n\t\t{{\/membership_required}}\n\t\tclass=\"wsite-menu-item\"\n\t\t>\n\t\t{{{title_html}}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n","navigation\/flyout\/list":"<div class=\"wsite-menu-wrap\" style=\"display:none\">\n\t<ul class=\"wsite-menu\">\n\t\t{{#children}}{{> navigation\/flyout\/item}}{{\/children}}\n\t<\/ul>\n<\/div>\n","navigation\/flyout\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-subitem-wrap {{#is_current}}wsite-nav-current{{\/is_current}}\"\n\t>\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\tclass=\"wsite-menu-subitem\"\n\t\t>\n\t\t<span class=\"wsite-menu-title\">\n\t\t\t{{{title_html}}}\n\t\t<\/span>{{#has_children}}<span class=\"wsite-menu-arrow\">&gt;<\/span>{{\/has_children}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n"},
+			{}
+		)
+	}
+//-->
+</script>
+		
+		
+	</head>
+	<body class="no-header-page  wsite-page-dice-throw wsite-theme-light"><div id="wrapper">
+
+	<div id="navigation">
+    <div id="navigation-wrap">
+  	 	<div id="nav">
+	      <div class="sitename"><span class="wsite-logo">
+
+	
+	<span class="wsite-title-placeholder">&nbsp;</span><span style="display:none">
+	<span style="display:none">Target driven universal TRPG system - The journey</span>
+	</span>
+	
+
+</span></div>
+				<ul class="wsite-menu-default">
+						<li id="pg683889504346869554" class="wsite-menu-item-wrap">
+							<a
+										href="index.html"
+								class="wsite-menu-item"
+								>
+								Home
+							</a>
+							
+						</li>
+						<li id="pg992754666127193064" class="wsite-menu-item-wrap">
+							<a
+										href="about.html"
+								class="wsite-menu-item"
+								>
+								About
+							</a>
+							
+						</li>
+						<li id="pg415759161248215329" class="wsite-menu-item-wrap">
+							<a
+										href="create-characters.html"
+								class="wsite-menu-item"
+								>
+								Create characters
+							</a>
+							
+						</li>
+						<li id="active" class="wsite-menu-item-wrap">
+							<a
+										href="dice-throw.html"
+								class="wsite-menu-item"
+								>
+								Dice throw
+							</a>
+							
+						</li>
+						<li id="pg605745235253759488" class="wsite-menu-item-wrap">
+							<a
+										href="combat.html"
+								class="wsite-menu-item"
+								>
+								Combat
+							</a>
+							
+						</li>
+						<li id="pg424821511858632472" class="wsite-menu-item-wrap">
+							<a
+										href="the-journey.html"
+								class="wsite-menu-item"
+								>
+								The Journey
+							</a>
+							
+						</li>
+				</ul>
+			</div>
+   	 	<div id="navmobile"></div>
+    </div>
+    <div id="mobile-close"></div>
+	</div>
+
+
+  <div id="main">
+
+    <div id="mobile-top">
+      <div id="mobile-open"></div>
+      <div class="sitename"><span class="wsite-logo">
+
+	
+	<span class="wsite-title-placeholder">&nbsp;</span><span style="display:none">
+	<span style="display:none">Target driven universal TRPG system - The journey</span>
+	</span>
+	
+
+</span></div>      
+    </div>
+
+  	<div id="content-wrapper">
+  		<div id="content"><div id="wsite-content" class="wsite-elements wsite-not-footer">
+	<span class='imgPusher' style='float:left;height:0px'></span><span style='display: table;width:auto;position:relative;float:left;max-width:100%;;clear:left;margin-top:0px;*margin-top:0px'><a><img src="uploads/2/3/4/2/23425996/158034.jpg?362" style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; none; max-width:100%" alt="Picture" class="galleryImageBorder wsite-image" /></a><span style="display: table-caption; caption-side: bottom; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;" class="wsite-caption"></span></span>
+<div class="paragraph" style="text-align:left;display:block;"><br />&#8203;<br /><br /><br /><br /><font size="3">&#20998;&#25104;&#25136;&#39717;&#21028;&#23450;&#12289;&#19968;&#33324;&#21028;&#23450;&#12289;&#35905;&#20813;&#21028;&#23450;&#21644;&#23565;&#25239;&#21028;&#23450;&#65292;&#20351;&#29992;&#29305;&#27530;&#39600;&#23376;&#12290;&#29305;&#27530;&#39600;&#23376;&#21487;&#29992;&#19968;&#33324;&#20845;&#38754;&#39600;&#23565;&#25033;<br />&#65288;1&#12289;2&#40786;&#36650;&#65307;3&#12289;4&#21133;&#65307;5&#39607;&#39631;&#65307;6&#39131;&#37858;&#65289;</font><br /><br /><strong><font size="5">&#25136;&#39717;&#21028;&#23450;:&nbsp;</font></strong><br /><font size="3">The Journey&#30340;&#25136;&#39717;&#26159;"&#20132;&#25163;"&#30340;&#27010;&#24565;&#65292;&#20027;&#21205;&#25915;&#25802;&#26178;&#20063;&#26377;&#21487;&#33021;&#29986;&#29983;&#39080;&#38570;&#65292;&#21487;&#33021;&#26159;&#23565;&#25163;&#30340;&#21453;&#25802;&#12289;&#33258;&#24049;&#30340;&#22833;&#35492;&#12289;&#25110;&#20219;&#20309;&#38750;&#38928;&#26399;&#30340;&#24847;&#22806;&#12290;<br />&#36914;&#34892;&#25136;&#39717;&#26178;&#65292;&#25842;&#31561;&#26044;&#25136;&#39717;&#21147;&#25976;&#30446;&#30340;&#39600;&#23376;<br /><strong>&#36817;&#25136;&#21028;&#23450;</strong>&#65306;&#36817;&#25136;&#25915;&#25802;&#35336;&#31639;&#21133;&#31526;&#34399;&#21644;&#39607;&#39631;&#31526;&#34399;&#30340;&#39600;&#23376;&#25976;&#37327;&#65292;&#20841;&#32773;&#30456;&#21152;&#28858;&#36896;&#25104;&#30340;&#20663;&#23475;&#65292;&#39607;&#39631;&#31526;&#34399;&#30340;&#25976;&#37327;&#28858;&#36889;&#27425;&#20132;&#25163;&#20013;&#33258;&#24049;&#21463;&#21040;&#30340;&#12300;&#38577;&#24739;&#12301;&#12290;</font><br /><font size="3"><strong>&#23556;&#25802;&#21028;&#23450;</strong>&#65306;&#23556;&#25802;&#26178;&#35336;&#31639;&#39131;&#37858;&#31526;&#34399;&#21644;&#39607;&#39631;&#31526;&#34399;&#30340;&#39600;&#23376;&#25976;&#37327;&#65292;&#20841;&#32773;&#30456;&#21152;&#28858;&#36896;&#25104;&#30340;&#20663;&#23475;&#65292;&#39607;&#39631;&#31526;&#34399;&#30340;&#25976;&#37327;&#28858;&#36889;&#27425;&#20132;&#25163;&#20013;&#33258;&#24049;&#21463;&#21040;&#30340;&#12300;&#38577;&#24739;&#12301;&#12290;<br />&#23559;&#12300;&#38577;&#24739;&#12301;&#20540;&#32000;&#37636;&#22312;&#35282;&#33394;&#32025;&#19978;&#65292;&#30070;&#32047;&#31309;&#21040;&#19978;&#38480;&#26178;&#65292;&#31227;&#38500;&#31561;&#21516;&#26044;&#19978;&#38480;&#30340;&#38577;&#24739;&#65292;&#20006;&#19988;&#25187;&#19968;&#40670;HP&#65292;&#22914;&#26524;&#36996;&#26377;&#38989;&#22806;&#30340;&#38577;&#24739;&#20540;&#21063;&#37325;&#26032;&#35352;&#37636;&#22312;&#35282;&#33394;&#32025;&#19978;&#12290;<br />&#12300;&#38577;&#24739;&#27133;&#12301;&#36890;&#24120;&#28858;&#35282;&#33394;HP&#30340;1/3&#65288;&#23567;&#25976;&#40670;&#25448;&#21435;&#65289;&#65292;&#19978;&#38480;&#28858;10&#12290;<br />&#22238;&#24489;HP&#30340;&#25928;&#26524;&#20063;&#21487;&#20197;&#29992;&#20358;&#22238;&#24489;&#38577;&#24739;&#12290;&#20241;&#24687;&#21487;&#20197;&#30452;&#25509;&#28165;&#38500;&#38577;&#24739;&#12290;</font><br /><br /><em><font size="3">ex. DEX&#22411;&#30340;&#30428;&#36042;&#20977;&#20234;&#24478;&#23665;&#24618;&#24460;&#26041;&#30340;&#23665;&#23830;&#19978;&#19968;&#36493;&#32780;&#19979;&#65292;&#35430;&#22294;&#23565;&#23665;&#24618;&#20570;&#20986;&#20599;&#35186;&#12290;&#20182;&#20351;&#29992;&#24517;&#27578;&#25216;&#12300;&#33268;&#21629;&#19968;&#25802;&#12301;&#65292;&#25842;6&#38982;&#39600;&#23376;&#35430;&#22294;&#36896;&#25104;&#36817;&#25136;&#20663;&#23475;&#12290;&#20182;&#30340;&#25915;&#25802;&#25842;&#20986;&#20102;6&#38982;&#39607;&#39631;&#31526;&#34399;&#65292;&#23565;&#23665;&#24618;&#36896;&#25104;6&#40670;&#30340;&#24040;&#22823;&#20663;&#23475;&#65292;&#20294;&#20063;&#24471;&#21040;6&#40670;&#38577;&#24739;&#65292;&#36229;&#36942;&#20102;&#20182;&#30340;&#38577;&#24739;&#27133;&#19978;&#38480;&#30340;5&#12290;&#20977;&#20234;&#36889;&#27425;&#30340;&#25915;&#25802;&#28145;&#28145;&#22320;&#21050;&#36914;&#23665;&#24618;&#30340;&#38968;&#26894;&#65292;&#19968;&#25802;&#35299;&#27770;&#20102;&#30332;&#20986;&#24801;&#33261;&#30340;&#24618;&#29289;&#65292;&#20294;&#30070;&#23665;&#24618;&#36703;&#28982;&#20498;&#19979;&#26178;&#65292;&#20977;&#20234;&#22240;&#28858;&#23665;&#24618;&#36523;&#19978;&#30340;&#27877;&#24052;&#28369;&#20102;&#19968;&#19979;&#65292;&#33258;&#24049;&#20063;&#21463;&#21040;1&#40670;&#20663;&#23475;&#65292;&#20063;&#30041;&#19979;&#20102;&#19981;&#22826;&#22909;&#30340;&#25163;&#24863;(1&#40670;&#38577;&#24739;)&#12290;</font></em><br /><br /><strong><font size="5">&#19968;&#33324;&#21028;&#23450;:&nbsp;</font></strong><br /><font size="3">&#25842;&#19977;&#38982;&#39600;&#23376;&#65292;&#35336;&#31639;&#40786;&#36650;&#22294;&#26696;&#30340;&#25976;&#37327;&#12290;&#38627;&#24230;&#20381;&#35282;&#33394;&#32780;&#19981;&#21516;&#65292;&#26997;&#31777;&#21934;&#30340;&#25361;&#25136;&#19981;&#38656;&#35201;&#25842;&#39600;&#65292;&#31777;&#21934;&#25361;&#25136;&#28858;&#19968;&#20491;&#40786;&#36650;&#65292;&#26222;&#36890;&#38627;&#24230;&#28858;&#20841;&#20491;&#40786;&#36650;&#65292;&#22256;&#38627;&#25361;&#25136;&#21063;&#38656;&#35201;&#19977;&#20491;&#40786;&#36650;&#12290;</font><br /><font size="3"><span>&#38627;&#24230;&#30340;&#27770;&#23450;&#27161;&#28310;&#20808;&#20381;&#25818;&#35282;&#33394;&#30340;&#25551;&#36848;&#32780;&#23450;&#65292;&#33509;&#27794;&#26377;&#20219;&#20309;&#35282;&#33394;&#21487;&#20197;&#21512;&#29702;&#30340;&#36914;&#34892;&#21028;&#23450;&#65292;&#21063;&#35222;&#25361;&#25136;&#30340;&#39006;&#22411;&#65292;&#20381;&#35282;&#33394;&#39006;&#22411;&#65288;&#39636;&#21147;&#22411;&#12289;&#26234;&#21147;&#22411;&#12289;&#36895;&#24230;&#22411;&#65289;&#27770;&#23450;&#23565;&#25033;&#30340;&#38627;&#24230;&#12290;</span></font><br /><br /><font size="3"><span><em>ex. &#23665;&#35041;&#36855;&#36335;&#26178;&#38656;&#35201;&#21028;&#26039;&#26041;&#21521;&#12290;&#33509;&#26377;&#23665;&#37326;&#31038;&#31038;&#21729;&#12289;&#37326;&#22806;&#27714;&#29983;&#23560;&#23478;&#25110;&#39006;&#20284;&#30340;&#35282;&#33394;&#65292;&#21063;&#23565;&#20182;&#20497;&#20358;&#35498;&#36889;&#21487;&#33021;&#26159;&#26997;&#31777;&#21934;&#25110;&#31777;&#21934;&#30340;&#25361;&#25136;&#65307;&#22914;&#26524;&#27794;&#26377;&#39006;&#20284;&#30340;&#35282;&#33394;&#65292;&#21063;&#23565;INT&#22411;&#30340;&#35282;&#33394;&#20358;&#35498;&#36890;&#24120;&#26159;&#26222;&#36890;&#25361;&#25136;&#65292;&#20854;&#20182;&#39006;&#22411;&#30340;&#35282;&#33394;&#21063;&#26159;&#22256;&#38627;&#25361;&#25136;&#12290;</em><br /><br />&#38920;&#27880;&#24847;&#30340;&#26159;&#65292;&#19968;&#33324;&#21028;&#23450;&#22833;&#25943;&#36890;&#24120;&#20006;&#19981;&#20195;&#34920;&#35442;&#21205;&#20316;&#22833;&#25943;&#65292;&#32780;&#26159;&#12300;&#23566;&#33268;&#20854;&#20182;&#30340;&#32080;&#26524;&#12301;&#12290;&#28961;&#35542;&#25104;&#21151;&#22833;&#25943;&#65292;&#25925;&#20107;&#20173;&#28982;&#26371;&#25512;&#36914;&#12290;</span></font><br /><br /><em><font size="3">ex. &#28858;&#20102;&#36092;&#36023;&#27085;&#26800;&#65292;&#19978;&#32178;&#25628;&#23563;&#36092;&#36023;&#27085;&#26800;&#30340;&#26041;&#24335;&#12290;<br />(&#27298;&#23450;&#25104;&#21151;)-&gt;&#12300;&#20320;&#25910;&#21040;&#20102;&#19968;&#23553;mail&#65292;&#35041;&#38754;&#26377;&#19968;&#20491;&#38651;&#35441;&#34399;&#30908;&#12290;&#20320;&#35201;&#24590;&#40636;&#20570;?&#12301;<br />(&#27298;&#23450;&#22833;&#25943;)-&gt;&#12300;&#20320;&#30332;&#29694;&#25214;&#19981;&#21040;&#36092;&#36023;&#27085;&#26800;&#30340;&#26041;&#27861;&#65292;&#20294;&#26159;&#25214;&#21040;&#20102;&#25913;&#36896;&#29609;&#20855;&#27085;&#30340;&#24433;&#29255;&#12290;&#20320;&#35201;&#24590;&#40636;&#20570;?&#12301;</font></em><br /><br /><strong><font size="5">&#35905;&#20813;&#21028;&#23450;:&nbsp;</font></strong><br /><font size="3">&#33509;&#35282;&#33394;&#21463;&#21040;&#36000;&#38754;&#29376;&#24907;&#65292;&#22312;&#33258;&#24049;&#30340;&#22238;&#21512;&#32080;&#26463;&#26178;&#25842;&#19977;&#38982;&#39600;&#23376;&#65292;&#27599;&#25842;&#20986;&#19968;&#20491;&#40786;&#36650;&#22294;&#26696;&#65292;&#23601;&#33021;&#31227;&#38500;&#19968;&#26522;&#20219;&#24847;&#36000;&#38754;&#29376;&#24907;&#25351;&#31034;&#29289;&#12290;</font><br /><br /><strong><font size="5">&#23565;&#25239;&#21028;&#23450;:</font></strong><br /><font size="3">&#38617;&#26041;&#21508;&#33258;&#25842;&#19977;&#38982;&#39600;&#23376;&#27604;&#36611;&#40786;&#36650;&#30340;&#25976;&#37327;&#65292;&#21487;&#20197;&#29992;&#22312;&#22914;&#25497;&#33067;&#25810;&#25265;&#12289;PC&#38291;&#30340;&#29229;&#22519;&#31561;&#28961;&#27861;&#30001;GM&#27770;&#23450;&#30340;&#22580;&#21512;&#12290;</font><br /><br /></div>
+<hr style="width:100%;clear:both;visibility:hidden;"></hr>
+</div>
+</div>
+  	</div>
+    
+  	<div id="footer">Create a <a target="_top" href="http:///">free web site</a> with <a target="_top" href="http:///" title="免費網站">Weebly</a></div>
+
+  </div>
+
+</div>
+<script type="text/javascript" src="files/theme/custom.js"></script>
+<script type="text/javascript" src="files/theme/mobile.js"></script>
+    <div id="customer-accounts-app"></div>
+    <script src="http://cdn11.editmysite.com/js/site/main-customer-accounts-site.js?buildtime=1234"></script>
+
+		
+	</body>
+</html>
