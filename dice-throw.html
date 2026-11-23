@@ -1,27 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Dice throw</title>
-
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0;">
-
-<script type="text/javascript" charset="utf-8">
+<html lang="zh-Hant">
+<head><script>
+/* 【語言設定】優先順序：網址 ?lang=en → 上次選過的語言 → 瀏覽器語言 → 中文（與個人網頁相同） */
+(function () {
+  var ok = ["zh-Hant", "en", "ja"];
+  var q = new URLSearchParams(location.search).get("lang");
+  var map = { zh: "zh-Hant", "zh-hant": "zh-Hant", "zh-tw": "zh-Hant", en: "en", ja: "ja" };
+  var lang = map[(q || "").toLowerCase()];
+  if (!lang) { try { lang = localStorage.getItem("lang"); } catch (e) {} }
+  if (ok.indexOf(lang) < 0) {
+    var nav = (navigator.language || "").toLowerCase();
+    lang = nav.indexOf("ja") === 0 ? "ja" : nav.indexOf("zh") === 0 ? "zh-Hant" : nav ? "en" : "zh-Hant";
+  }
+  document.documentElement.lang = lang;
+})();
+</script>
+<title>Dice throw</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="width=device-width, initial-scale=1.0;" name="viewport"/>
+<script charset="utf-8" type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function () {
 		var menuCapture = document.getElementById("nav").innerHTML;
 		document.getElementById("navmobile").innerHTML = document.getElementById("nav").innerHTML;
 	});
 </script>
-
-
-		
-		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="http://cdn11.editmysite.com/css/sites.css?buildtime=1234" />
-<link rel="stylesheet" type="text/css" href="http://cdn11.editmysite.com/css/old/fancybox.css?buildtime=1234" />
-<link rel="stylesheet" type="text/css" href="files/main_style.css?1782821284" title="wsite-theme-css" />
-<link href='http://cdn2.editmysite.com/fonts/Maven_Pro/font.css?2' rel='stylesheet' type='text/css' />
-
-<style type='text/css'>
+<link href="http://cdn11.editmysite.com/css/sites.css?buildtime=1234" id="wsite-base-style" rel="stylesheet" type="text/css"/>
+<link href="http://cdn11.editmysite.com/css/old/fancybox.css?buildtime=1234" rel="stylesheet" type="text/css"/>
+<link href="files/main_style.css?1782821284" rel="stylesheet" title="wsite-theme-css" type="text/css"/>
+<link href="http://cdn2.editmysite.com/fonts/Maven_Pro/font.css?2" rel="stylesheet" type="text/css"/>
+<style type="text/css">
 .wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
 #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
 .wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
@@ -67,16 +74,14 @@
 #wsite-content h2.wsite-product-title {}
 .wsite-product .wsite-product-price a {}
 }</style>
-
-		<script src='files/templateArtifacts.js?1743931075'></script>
+<script src="files/templateArtifacts.js?1743931075"></script>
 <script>
 var STATIC_BASE = '//cdn1.editmysite.com/';
 var ASSETS_BASE = '//cdn11.editmysite.com/';
 var STYLE_PREFIX = 'wsite';
 </script>
-<script src='https://cdn11.editmysite.com/js/jquery-1.8.3.min.js'></script>
-
-<script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script>
+<script src="https://cdn11.editmysite.com/js/jquery-1.8.3.min.js"></script>
+<script src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&amp;" type="text/javascript"></script>
 <script src="http://cdn11.editmysite.com/js/site/main.js?buildtime=1234"></script><script type="text/javascript">
 		function initCustomerAccountsModels() {
 					(function(){_W.setup_rpc({"url":"\/ajax\/api\/JsonRPC\/CustomerAccounts\/","actions":{"CustomerAccounts":[{"name":"login","len":2,"multiple":false,"standalone":false},{"name":"logout","len":0,"multiple":false,"standalone":false},{"name":"getSessionDetails","len":0,"multiple":false,"standalone":false},{"name":"getAccountDetails","len":0,"multiple":false,"standalone":false},{"name":"getOrders","len":0,"multiple":false,"standalone":false},{"name":"register","len":4,"multiple":false,"standalone":false},{"name":"emailExists","len":1,"multiple":false,"standalone":false},{"name":"passwordReset","len":1,"multiple":false,"standalone":false},{"name":"passwordUpdate","len":3,"multiple":false,"standalone":false},{"name":"validateSession","len":1,"multiple":false,"standalone":false}]},"namespace":"_W.CustomerAccounts.RPC"});
@@ -91,7 +96,7 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 			document.documentElement.initCustomerAccountsModels++
 		}
 		</script>
-		<script type="text/javascript"> _W = _W || {}; _W.securePrefix='UNSET'; </script><script>_W = _W || {};
+<script type="text/javascript"> _W = _W || {}; _W.securePrefix='UNSET'; </script><script>_W = _W || {};
 			_W.customerLocale = "en_US";
 			_W.storeName = null;
 			_W.isCheckoutReskin = false;
@@ -100,7 +105,7 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 			_W.storeEuPrivacyPolicyUrl = "";
 			com_currentSite = "239313511692856245";
 			com_userID = "23425996";</script><script type="text/javascript">_W.configDomain = "";</script><script>_W.relinquish && _W.relinquish()</script>
-<script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script><script> _W.themePlugins = [];</script><script type="text/javascript"> _W.recaptchaUrl = "https://www.google.com/recaptcha/api.js"; </script><script type="text/javascript"><!--
+<script src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&amp;" type="text/javascript"></script><script> _W.themePlugins = [];</script><script type="text/javascript"> _W.recaptchaUrl = "https://www.google.com/recaptcha/api.js"; </script><script type="text/javascript"><!--
 	var IS_ARCHIVE = 1;
 	
 	function initFlyouts(){
@@ -116,120 +121,112 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 	}
 //-->
 </script>
-		
-		
-	</head>
-	<body class="no-header-page  wsite-page-dice-throw wsite-theme-light"><div id="wrapper">
+<style>
+/* ---------- 多語言 ----------
+   每段文字有三份：class="zh" / "en" / "ja"，只顯示目前語言那一份 */
+html:not([lang="zh-Hant"]) .zh,
+html:not([lang="en"]) .en,
+html:not([lang="ja"]) .ja { display: none !important; }
+html[lang="ja"] #wsite-content { font-family: "Noto Sans JP", -apple-system, "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif; }
 
-	<div id="navigation">
-    <div id="navigation-wrap">
-  	 	<div id="nav">
-	      <div class="sitename"><span class="wsite-logo">
-
-	
-	<span class="wsite-title-placeholder">&nbsp;</span><span style="display:none">
-	<span style="display:none">Target driven universal TRPG system - The journey</span>
-	</span>
-	
-
+.lang-switch { position: absolute; top: 18px; right: 20px; z-index: 1000; display: flex; gap: 4px; font-size: 13px; }
+.lang-switch button { border: 1px solid #ddd; background: #fff; color: #888; padding: 4px 10px;
+  border-radius: 999px; cursor: pointer; font: inherit; line-height: 1.4; }
+.lang-switch button[aria-pressed="true"] { border-color: #333; color: #333; }
+@media (max-width: 767px) { .lang-switch { position: fixed; top: auto; bottom: 14px; right: 14px; }
+  .lang-switch button { background: rgba(255,255,255,.95); padding: 6px 12px; } }
+</style></head>
+<body class="no-header-page wsite-page-dice-throw wsite-theme-light"><nav aria-label="Language" class="lang-switch"><button data-set-lang="zh-Hant" type="button">中</button><button data-set-lang="en" type="button">EN</button><button data-set-lang="ja" type="button">日</button></nav><div id="wrapper">
+<div id="navigation">
+<div id="navigation-wrap">
+<div id="nav">
+<div class="sitename"><span class="wsite-logo">
+<span class="wsite-title-placeholder"> </span><span style="display:none">
+<span style="display:none">Target driven universal TRPG system - The journey</span>
+</span>
 </span></div>
-				<ul class="wsite-menu-default">
-						<li id="pg683889504346869554" class="wsite-menu-item-wrap">
-							<a
-										href="index.html"
-								class="wsite-menu-item"
-								>
+<ul class="wsite-menu-default">
+<li class="wsite-menu-item-wrap" id="pg683889504346869554">
+<a class="wsite-menu-item" href="index.html">
 								Home
 							</a>
-							
-						</li>
-						<li id="pg992754666127193064" class="wsite-menu-item-wrap">
-							<a
-										href="about.html"
-								class="wsite-menu-item"
-								>
+</li>
+<li class="wsite-menu-item-wrap" id="pg992754666127193064">
+<a class="wsite-menu-item" href="about.html">
 								About
 							</a>
-							
-						</li>
-						<li id="pg415759161248215329" class="wsite-menu-item-wrap">
-							<a
-										href="create-characters.html"
-								class="wsite-menu-item"
-								>
+</li>
+<li class="wsite-menu-item-wrap" id="pg415759161248215329">
+<a class="wsite-menu-item" href="create-characters.html">
 								Create characters
 							</a>
-							
-						</li>
-						<li id="active" class="wsite-menu-item-wrap">
-							<a
-										href="dice-throw.html"
-								class="wsite-menu-item"
-								>
+</li>
+<li class="wsite-menu-item-wrap" id="active">
+<a class="wsite-menu-item" href="dice-throw.html">
 								Dice throw
 							</a>
-							
-						</li>
-						<li id="pg605745235253759488" class="wsite-menu-item-wrap">
-							<a
-										href="combat.html"
-								class="wsite-menu-item"
-								>
+</li>
+<li class="wsite-menu-item-wrap" id="pg605745235253759488">
+<a class="wsite-menu-item" href="combat.html">
 								Combat
 							</a>
-							
-						</li>
-						<li id="pg424821511858632472" class="wsite-menu-item-wrap">
-							<a
-										href="the-journey.html"
-								class="wsite-menu-item"
-								>
+</li>
+<li class="wsite-menu-item-wrap" id="pg424821511858632472">
+<a class="wsite-menu-item" href="the-journey.html">
 								The Journey
 							</a>
-							
-						</li>
-				</ul>
-			</div>
-   	 	<div id="navmobile"></div>
-    </div>
-    <div id="mobile-close"></div>
-	</div>
-
-
-  <div id="main">
-
-    <div id="mobile-top">
-      <div id="mobile-open"></div>
-      <div class="sitename"><span class="wsite-logo">
-
-	
-	<span class="wsite-title-placeholder">&nbsp;</span><span style="display:none">
-	<span style="display:none">Target driven universal TRPG system - The journey</span>
-	</span>
-	
-
-</span></div>      
-    </div>
-
-  	<div id="content-wrapper">
-  		<div id="content"><div id="wsite-content" class="wsite-elements wsite-not-footer">
-	<span class='imgPusher' style='float:left;height:0px'></span><span style='display: table;width:auto;position:relative;float:left;max-width:100%;;clear:left;margin-top:0px;*margin-top:0px'><a><img src="uploads/2/3/4/2/23425996/158034.jpg?362" style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; none; max-width:100%" alt="Picture" class="galleryImageBorder wsite-image" /></a><span style="display: table-caption; caption-side: bottom; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;" class="wsite-caption"></span></span>
-<div class="paragraph" style="text-align:left;display:block;"><br />&#8203;<br /><br /><br /><br /><font size="3">&#20998;&#25104;&#25136;&#39717;&#21028;&#23450;&#12289;&#19968;&#33324;&#21028;&#23450;&#12289;&#35905;&#20813;&#21028;&#23450;&#21644;&#23565;&#25239;&#21028;&#23450;&#65292;&#20351;&#29992;&#29305;&#27530;&#39600;&#23376;&#12290;&#29305;&#27530;&#39600;&#23376;&#21487;&#29992;&#19968;&#33324;&#20845;&#38754;&#39600;&#23565;&#25033;<br />&#65288;1&#12289;2&#40786;&#36650;&#65307;3&#12289;4&#21133;&#65307;5&#39607;&#39631;&#65307;6&#39131;&#37858;&#65289;</font><br /><br /><strong><font size="5">&#25136;&#39717;&#21028;&#23450;:&nbsp;</font></strong><br /><font size="3">The Journey&#30340;&#25136;&#39717;&#26159;"&#20132;&#25163;"&#30340;&#27010;&#24565;&#65292;&#20027;&#21205;&#25915;&#25802;&#26178;&#20063;&#26377;&#21487;&#33021;&#29986;&#29983;&#39080;&#38570;&#65292;&#21487;&#33021;&#26159;&#23565;&#25163;&#30340;&#21453;&#25802;&#12289;&#33258;&#24049;&#30340;&#22833;&#35492;&#12289;&#25110;&#20219;&#20309;&#38750;&#38928;&#26399;&#30340;&#24847;&#22806;&#12290;<br />&#36914;&#34892;&#25136;&#39717;&#26178;&#65292;&#25842;&#31561;&#26044;&#25136;&#39717;&#21147;&#25976;&#30446;&#30340;&#39600;&#23376;<br /><strong>&#36817;&#25136;&#21028;&#23450;</strong>&#65306;&#36817;&#25136;&#25915;&#25802;&#35336;&#31639;&#21133;&#31526;&#34399;&#21644;&#39607;&#39631;&#31526;&#34399;&#30340;&#39600;&#23376;&#25976;&#37327;&#65292;&#20841;&#32773;&#30456;&#21152;&#28858;&#36896;&#25104;&#30340;&#20663;&#23475;&#65292;&#39607;&#39631;&#31526;&#34399;&#30340;&#25976;&#37327;&#28858;&#36889;&#27425;&#20132;&#25163;&#20013;&#33258;&#24049;&#21463;&#21040;&#30340;&#12300;&#38577;&#24739;&#12301;&#12290;</font><br /><font size="3"><strong>&#23556;&#25802;&#21028;&#23450;</strong>&#65306;&#23556;&#25802;&#26178;&#35336;&#31639;&#39131;&#37858;&#31526;&#34399;&#21644;&#39607;&#39631;&#31526;&#34399;&#30340;&#39600;&#23376;&#25976;&#37327;&#65292;&#20841;&#32773;&#30456;&#21152;&#28858;&#36896;&#25104;&#30340;&#20663;&#23475;&#65292;&#39607;&#39631;&#31526;&#34399;&#30340;&#25976;&#37327;&#28858;&#36889;&#27425;&#20132;&#25163;&#20013;&#33258;&#24049;&#21463;&#21040;&#30340;&#12300;&#38577;&#24739;&#12301;&#12290;<br />&#23559;&#12300;&#38577;&#24739;&#12301;&#20540;&#32000;&#37636;&#22312;&#35282;&#33394;&#32025;&#19978;&#65292;&#30070;&#32047;&#31309;&#21040;&#19978;&#38480;&#26178;&#65292;&#31227;&#38500;&#31561;&#21516;&#26044;&#19978;&#38480;&#30340;&#38577;&#24739;&#65292;&#20006;&#19988;&#25187;&#19968;&#40670;HP&#65292;&#22914;&#26524;&#36996;&#26377;&#38989;&#22806;&#30340;&#38577;&#24739;&#20540;&#21063;&#37325;&#26032;&#35352;&#37636;&#22312;&#35282;&#33394;&#32025;&#19978;&#12290;<br />&#12300;&#38577;&#24739;&#27133;&#12301;&#36890;&#24120;&#28858;&#35282;&#33394;HP&#30340;1/3&#65288;&#23567;&#25976;&#40670;&#25448;&#21435;&#65289;&#65292;&#19978;&#38480;&#28858;10&#12290;<br />&#22238;&#24489;HP&#30340;&#25928;&#26524;&#20063;&#21487;&#20197;&#29992;&#20358;&#22238;&#24489;&#38577;&#24739;&#12290;&#20241;&#24687;&#21487;&#20197;&#30452;&#25509;&#28165;&#38500;&#38577;&#24739;&#12290;</font><br /><br /><em><font size="3">ex. DEX&#22411;&#30340;&#30428;&#36042;&#20977;&#20234;&#24478;&#23665;&#24618;&#24460;&#26041;&#30340;&#23665;&#23830;&#19978;&#19968;&#36493;&#32780;&#19979;&#65292;&#35430;&#22294;&#23565;&#23665;&#24618;&#20570;&#20986;&#20599;&#35186;&#12290;&#20182;&#20351;&#29992;&#24517;&#27578;&#25216;&#12300;&#33268;&#21629;&#19968;&#25802;&#12301;&#65292;&#25842;6&#38982;&#39600;&#23376;&#35430;&#22294;&#36896;&#25104;&#36817;&#25136;&#20663;&#23475;&#12290;&#20182;&#30340;&#25915;&#25802;&#25842;&#20986;&#20102;6&#38982;&#39607;&#39631;&#31526;&#34399;&#65292;&#23565;&#23665;&#24618;&#36896;&#25104;6&#40670;&#30340;&#24040;&#22823;&#20663;&#23475;&#65292;&#20294;&#20063;&#24471;&#21040;6&#40670;&#38577;&#24739;&#65292;&#36229;&#36942;&#20102;&#20182;&#30340;&#38577;&#24739;&#27133;&#19978;&#38480;&#30340;5&#12290;&#20977;&#20234;&#36889;&#27425;&#30340;&#25915;&#25802;&#28145;&#28145;&#22320;&#21050;&#36914;&#23665;&#24618;&#30340;&#38968;&#26894;&#65292;&#19968;&#25802;&#35299;&#27770;&#20102;&#30332;&#20986;&#24801;&#33261;&#30340;&#24618;&#29289;&#65292;&#20294;&#30070;&#23665;&#24618;&#36703;&#28982;&#20498;&#19979;&#26178;&#65292;&#20977;&#20234;&#22240;&#28858;&#23665;&#24618;&#36523;&#19978;&#30340;&#27877;&#24052;&#28369;&#20102;&#19968;&#19979;&#65292;&#33258;&#24049;&#20063;&#21463;&#21040;1&#40670;&#20663;&#23475;&#65292;&#20063;&#30041;&#19979;&#20102;&#19981;&#22826;&#22909;&#30340;&#25163;&#24863;(1&#40670;&#38577;&#24739;)&#12290;</font></em><br /><br /><strong><font size="5">&#19968;&#33324;&#21028;&#23450;:&nbsp;</font></strong><br /><font size="3">&#25842;&#19977;&#38982;&#39600;&#23376;&#65292;&#35336;&#31639;&#40786;&#36650;&#22294;&#26696;&#30340;&#25976;&#37327;&#12290;&#38627;&#24230;&#20381;&#35282;&#33394;&#32780;&#19981;&#21516;&#65292;&#26997;&#31777;&#21934;&#30340;&#25361;&#25136;&#19981;&#38656;&#35201;&#25842;&#39600;&#65292;&#31777;&#21934;&#25361;&#25136;&#28858;&#19968;&#20491;&#40786;&#36650;&#65292;&#26222;&#36890;&#38627;&#24230;&#28858;&#20841;&#20491;&#40786;&#36650;&#65292;&#22256;&#38627;&#25361;&#25136;&#21063;&#38656;&#35201;&#19977;&#20491;&#40786;&#36650;&#12290;</font><br /><font size="3"><span>&#38627;&#24230;&#30340;&#27770;&#23450;&#27161;&#28310;&#20808;&#20381;&#25818;&#35282;&#33394;&#30340;&#25551;&#36848;&#32780;&#23450;&#65292;&#33509;&#27794;&#26377;&#20219;&#20309;&#35282;&#33394;&#21487;&#20197;&#21512;&#29702;&#30340;&#36914;&#34892;&#21028;&#23450;&#65292;&#21063;&#35222;&#25361;&#25136;&#30340;&#39006;&#22411;&#65292;&#20381;&#35282;&#33394;&#39006;&#22411;&#65288;&#39636;&#21147;&#22411;&#12289;&#26234;&#21147;&#22411;&#12289;&#36895;&#24230;&#22411;&#65289;&#27770;&#23450;&#23565;&#25033;&#30340;&#38627;&#24230;&#12290;</span></font><br /><br /><font size="3"><span><em>ex. &#23665;&#35041;&#36855;&#36335;&#26178;&#38656;&#35201;&#21028;&#26039;&#26041;&#21521;&#12290;&#33509;&#26377;&#23665;&#37326;&#31038;&#31038;&#21729;&#12289;&#37326;&#22806;&#27714;&#29983;&#23560;&#23478;&#25110;&#39006;&#20284;&#30340;&#35282;&#33394;&#65292;&#21063;&#23565;&#20182;&#20497;&#20358;&#35498;&#36889;&#21487;&#33021;&#26159;&#26997;&#31777;&#21934;&#25110;&#31777;&#21934;&#30340;&#25361;&#25136;&#65307;&#22914;&#26524;&#27794;&#26377;&#39006;&#20284;&#30340;&#35282;&#33394;&#65292;&#21063;&#23565;INT&#22411;&#30340;&#35282;&#33394;&#20358;&#35498;&#36890;&#24120;&#26159;&#26222;&#36890;&#25361;&#25136;&#65292;&#20854;&#20182;&#39006;&#22411;&#30340;&#35282;&#33394;&#21063;&#26159;&#22256;&#38627;&#25361;&#25136;&#12290;</em><br /><br />&#38920;&#27880;&#24847;&#30340;&#26159;&#65292;&#19968;&#33324;&#21028;&#23450;&#22833;&#25943;&#36890;&#24120;&#20006;&#19981;&#20195;&#34920;&#35442;&#21205;&#20316;&#22833;&#25943;&#65292;&#32780;&#26159;&#12300;&#23566;&#33268;&#20854;&#20182;&#30340;&#32080;&#26524;&#12301;&#12290;&#28961;&#35542;&#25104;&#21151;&#22833;&#25943;&#65292;&#25925;&#20107;&#20173;&#28982;&#26371;&#25512;&#36914;&#12290;</span></font><br /><br /><em><font size="3">ex. &#28858;&#20102;&#36092;&#36023;&#27085;&#26800;&#65292;&#19978;&#32178;&#25628;&#23563;&#36092;&#36023;&#27085;&#26800;&#30340;&#26041;&#24335;&#12290;<br />(&#27298;&#23450;&#25104;&#21151;)-&gt;&#12300;&#20320;&#25910;&#21040;&#20102;&#19968;&#23553;mail&#65292;&#35041;&#38754;&#26377;&#19968;&#20491;&#38651;&#35441;&#34399;&#30908;&#12290;&#20320;&#35201;&#24590;&#40636;&#20570;?&#12301;<br />(&#27298;&#23450;&#22833;&#25943;)-&gt;&#12300;&#20320;&#30332;&#29694;&#25214;&#19981;&#21040;&#36092;&#36023;&#27085;&#26800;&#30340;&#26041;&#27861;&#65292;&#20294;&#26159;&#25214;&#21040;&#20102;&#25913;&#36896;&#29609;&#20855;&#27085;&#30340;&#24433;&#29255;&#12290;&#20320;&#35201;&#24590;&#40636;&#20570;?&#12301;</font></em><br /><br /><strong><font size="5">&#35905;&#20813;&#21028;&#23450;:&nbsp;</font></strong><br /><font size="3">&#33509;&#35282;&#33394;&#21463;&#21040;&#36000;&#38754;&#29376;&#24907;&#65292;&#22312;&#33258;&#24049;&#30340;&#22238;&#21512;&#32080;&#26463;&#26178;&#25842;&#19977;&#38982;&#39600;&#23376;&#65292;&#27599;&#25842;&#20986;&#19968;&#20491;&#40786;&#36650;&#22294;&#26696;&#65292;&#23601;&#33021;&#31227;&#38500;&#19968;&#26522;&#20219;&#24847;&#36000;&#38754;&#29376;&#24907;&#25351;&#31034;&#29289;&#12290;</font><br /><br /><strong><font size="5">&#23565;&#25239;&#21028;&#23450;:</font></strong><br /><font size="3">&#38617;&#26041;&#21508;&#33258;&#25842;&#19977;&#38982;&#39600;&#23376;&#27604;&#36611;&#40786;&#36650;&#30340;&#25976;&#37327;&#65292;&#21487;&#20197;&#29992;&#22312;&#22914;&#25497;&#33067;&#25810;&#25265;&#12289;PC&#38291;&#30340;&#29229;&#22519;&#31561;&#28961;&#27861;&#30001;GM&#27770;&#23450;&#30340;&#22580;&#21512;&#12290;</font><br /><br /></div>
-<hr style="width:100%;clear:both;visibility:hidden;"></hr>
+</li>
+</ul>
+</div>
+<div id="navmobile"></div>
+</div>
+<div id="mobile-close"></div>
+</div>
+<div id="main">
+<div id="mobile-top">
+<div id="mobile-open"></div>
+<div class="sitename"><span class="wsite-logo">
+<span class="wsite-title-placeholder"> </span><span style="display:none">
+<span style="display:none">Target driven universal TRPG system - The journey</span>
+</span>
+</span></div>
+</div>
+<div id="content-wrapper">
+<div id="content"><div class="wsite-elements wsite-not-footer" id="wsite-content">
+<span class="imgPusher" style="float:left;height:0px"></span><span style="display: table;width:auto;position:relative;float:left;max-width:100%;;clear:left;margin-top:0px;*margin-top:0px"><a><img alt="Picture" class="galleryImageBorder wsite-image" src="uploads/2/3/4/2/23425996/158034.jpg?362" style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; none; max-width:100%"/></a><span class="wsite-caption" style="display: table-caption; caption-side: bottom; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></span></span>
+<div class="paragraph zh" style="text-align:left;display:block;"><br/>​<br/><br/><br/><br/><font size="3">分成戰鬥判定、一般判定、豁免判定和對抗判定，使用特殊骰子。特殊骰子可用一般六面骰對應<br/>（1、2齒輪；3、4劍；5骷髏；6飛鏢）</font><br/><br/><strong><font size="5">戰鬥判定: </font></strong><br/><font size="3">The Journey的戰鬥是"交手"的概念，主動攻擊時也有可能產生風險，可能是對手的反擊、自己的失誤、或任何非預期的意外。<br/>進行戰鬥時，擲等於戰鬥力數目的骰子<br/><strong>近戰判定</strong>：近戰攻擊計算劍符號和骷髏符號的骰子數量，兩者相加為造成的傷害，骷髏符號的數量為這次交手中自己受到的「隱患」。</font><br/><font size="3"><strong>射擊判定</strong>：射擊時計算飛鏢符號和骷髏符號的骰子數量，兩者相加為造成的傷害，骷髏符號的數量為這次交手中自己受到的「隱患」。<br/>將「隱患」值紀錄在角色紙上，當累積到上限時，移除等同於上限的隱患，並且扣一點HP，如果還有額外的隱患值則重新記錄在角色紙上。<br/>「隱患槽」通常為角色HP的1/3（小數點捨去），上限為10。<br/>回復HP的效果也可以用來回復隱患。休息可以直接清除隱患。</font><br/><br/><em><font size="3">ex. DEX型的盜賊凱伊從山怪後方的山崖上一躍而下，試圖對山怪做出偷襲。他使用必殺技「致命一擊」，擲6顆骰子試圖造成近戰傷害。他的攻擊擲出了6顆骷髏符號，對山怪造成6點的巨大傷害，但也得到6點隱患，超過了他的隱患槽上限的5。凱伊這次的攻擊深深地刺進山怪的頸椎，一擊解決了發出惡臭的怪物，但當山怪轟然倒下時，凱伊因為山怪身上的泥巴滑了一下，自己也受到1點傷害，也留下了不太好的手感(1點隱患)。</font></em><br/><br/><strong><font size="5">一般判定: </font></strong><br/><font size="3">擲三顆骰子，計算齒輪圖案的數量。難度依角色而不同，極簡單的挑戰不需要擲骰，簡單挑戰為一個齒輪，普通難度為兩個齒輪，困難挑戰則需要三個齒輪。</font><br/><font size="3"><span>難度的決定標準先依據角色的描述而定，若沒有任何角色可以合理的進行判定，則視挑戰的類型，依角色類型（體力型、智力型、速度型）決定對應的難度。</span></font><br/><br/><font size="3"><span><em>ex. 山裡迷路時需要判斷方向。若有山野社社員、野外求生專家或類似的角色，則對他們來說這可能是極簡單或簡單的挑戰；如果沒有類似的角色，則對INT型的角色來說通常是普通挑戰，其他類型的角色則是困難挑戰。</em><br/><br/>須注意的是，一般判定失敗通常並不代表該動作失敗，而是「導致其他的結果」。無論成功失敗，故事仍然會推進。</span></font><br/><br/><em><font size="3">ex. 為了購買槍械，上網搜尋購買槍械的方式。<br/>(檢定成功)-&gt;「你收到了一封mail，裡面有一個電話號碼。你要怎麼做?」<br/>(檢定失敗)-&gt;「你發現找不到購買槍械的方法，但是找到了改造玩具槍的影片。你要怎麼做?」</font></em><br/><br/><strong><font size="5">豁免判定: </font></strong><br/><font size="3">若角色受到負面狀態，在自己的回合結束時擲三顆骰子，每擲出一個齒輪圖案，就能移除一枚任意負面狀態指示物。</font><br/><br/><strong><font size="5">對抗判定:</font></strong><br/><font size="3">雙方各自擲三顆骰子比較齒輪的數量，可以用在如掙脫擒抱、PC間的爭執等無法由GM決定的場合。</font><br/><br/></div><div class="paragraph en" lang="en" style="text-align:left;display:block;"><br/><br/><br/><br/><br/><font size="3">There are Combat Rolls, General Rolls, Saving Rolls, and Opposed Rolls, all using special dice. The special dice can be mapped onto a regular six-sided die<br/>(1, 2 Gear; 3, 4 Sword; 5 Skull; 6 Dart)</font><br/><br/><strong><font size="5">Combat Roll: </font></strong><br/><font size="3">Combat in The Journey works as an "exchange": even attacking carries risk, whether from the opponent's counterattack, your own mistake, or any unexpected accident.<br/>In combat, roll a number of dice equal to your Combat Power<br/><strong>Melee Roll</strong>: for a melee attack, count the dice showing Sword and Skull symbols. Their sum is the damage dealt, and the number of Skulls is the "Strain" you take in this exchange.</font><br/><font size="3"><strong>Ranged Roll</strong>: for a ranged attack, count the dice showing Dart and Skull symbols. Their sum is the damage dealt, and the number of Skulls is the "Strain" you take in this exchange.<br/>Record your Strain on the character sheet. When it reaches the limit, remove Strain equal to the limit and lose 1 HP; any excess Strain is recorded again on the character sheet.<br/>The "Strain Track" is usually 1/3 of the character's HP (rounded down), to a maximum of 10.<br/>Effects that restore HP can also be used to remove Strain. Resting clears all Strain.</font><br/><br/><em><font size="3">ex. Kai, a DEX type rogue, leaps down from the cliff behind a troll, attempting a sneak attack. He uses his Signature Move "Lethal Strike" and rolls 6 dice for melee damage. His attack rolls 6 Skulls, dealing a massive 6 damage to the troll, but he also gains 6 Strain, exceeding his Strain Track limit of 5. Kai's strike plunges deep into the troll's neck, finishing off the foul-smelling monster in one blow. But as the troll crashes down, Kai slips on the mud covering it and takes 1 damage himself, plus an uneasy feeling about it (1 Strain).</font></em><br/><br/><strong><font size="5">General Roll: </font></strong><br/><font size="3">Roll three dice and count the Gear symbols. Difficulty varies by character: very easy challenges need no roll, Easy challenges need one Gear, Normal difficulty needs two Gears, and Hard challenges need three Gears.</font><br/><font size="3">Difficulty is first based on the character's description. If no character can reasonably attempt the roll, then look at the type of challenge and set the difficulty according to character type (STR type, INT type, DEX type).</font><br/><br/><font size="3"><em>ex. You need to find your way after getting lost in the mountains. If there's a hiking club member, wilderness survival expert, or similar character, this might be very easy or Easy for them; if there's no such character, it's usually a Normal challenge for INT type characters and a Hard challenge for other types.</em><br/><br/>Note that failing a General Roll usually doesn't mean the action fails, but rather that it "leads to a different outcome". Success or failure, the story still moves forward.</font><br/><br/><em><font size="3">ex. Searching online for a way to buy guns.<br/>(Roll succeeds)-&gt;"You receive an email with a phone number in it. What do you do?"<br/>(Roll fails)-&gt;"You can't find any way to buy guns, but you do find videos on modding toy guns. What do you do?"</font></em><br/><br/><strong><font size="5">Saving Roll: </font></strong><br/><font size="3">If a character has a negative condition, roll three dice at the end of its turn; for each Gear rolled, remove one negative condition token of your choice.</font><br/><br/><strong><font size="5">Opposed Roll:</font></strong><br/><font size="3">Each side rolls three dice and compares the number of Gears. Use it for situations the GM can't decide alone, such as breaking free of a grapple or disputes between PCs.</font><br/><br/></div><div class="paragraph ja" lang="ja" style="text-align:left;display:block;"><br/><br/><br/><br/><br/><font size="3">戦闘判定、一般判定、抵抗判定、対抗判定に分かれ、専用ダイスを使用します。専用ダイスは通常の6面ダイスで代用できます<br/>（1、2が歯車；3、4が剣；5がドクロ；6がダーツ）</font><br/><br/><strong><font size="5">戦闘判定: </font></strong><br/><font size="3">The Journeyの戦闘は「打ち合い」の概念であり、自分から攻撃する場合にもリスクが生じることがあります。それは相手の反撃かもしれませんし、自分のミス、あるいは何らかの予期せぬアクシデントかもしれません。<br/>戦闘を行う際は、戦闘力に等しい数のダイスを振ります<br/><strong>近接判定</strong>：近接攻撃では剣の目とドクロの目が出たダイスの数を数え、その合計が与えるダメージとなります。ドクロの目の数は、この打ち合いで自分が受ける「負荷」となります。</font><br/><font size="3"><strong>射撃判定</strong>：射撃ではダーツの目とドクロの目が出たダイスの数を数え、その合計が与えるダメージとなります。ドクロの目の数は、この打ち合いで自分が受ける「負荷」となります。<br/>「負荷」の値はキャラクターシートに記録します。上限まで蓄積したら、上限に等しい負荷を取り除き、HPを1点減らします。余った負荷があれば、改めてキャラクターシートに記録します。<br/>「負荷ゲージ」は通常キャラクターのHPの1/3（端数切り捨て）で、上限は10です。<br/>HPを回復する効果は負荷の回復にも使えます。休息すれば負荷を直接すべて消去できます。</font><br/><br/><em><font size="3">ex. DEX型の盗賊カイは、トロールの背後の崖から飛び降り、トロールに奇襲を仕掛けようとした。彼は必殺技「致命の一撃」を使い、ダイスを6個振って近接ダメージを与えようとする。攻撃の結果はドクロの目が6個。トロールに6点もの大ダメージを与えたが、同時に6点の負荷も受け、負荷ゲージの上限5を超えてしまった。カイの一撃はトロールの頸椎に深々と突き刺さり、悪臭を放つ怪物を一撃で仕留めた。しかしトロールが轟音とともに倒れたとき、カイはトロールの体についた泥で足を滑らせ、自分も1点のダメージを受け、あまり良くない手応え（1点の負荷）も残った。</font></em><br/><br/><strong><font size="5">一般判定: </font></strong><br/><font size="3">ダイスを3個振り、歯車の目の数を数えます。難易度はキャラクターによって異なります。ごく簡単な試練ならダイスを振る必要はなく、簡単な試練は歯車1つ、普通の難易度は歯車2つ、困難な試練は歯車3つが必要です。</font><br/><font size="3">難易度は、まずキャラクターの描写にもとづいて決めます。どのキャラクターも筋の通った形で判定を行えない場合は、試練の種類に応じて、キャラクタータイプ（体力型、知力型、速度型）ごとに対応する難易度を決めます。</font><br/><br/><font size="3"><em>ex. 山中で道に迷い、方角を見定める必要がある場合。山岳部の部員やサバイバルの専門家、あるいはそれに類するキャラクターがいれば、彼らにとってはごく簡単か簡単な試練かもしれません。そうしたキャラクターがいなければ、INT型のキャラクターにとっては通常は普通の試練、その他のタイプのキャラクターにとっては困難な試練となります。</em><br/><br/>注意すべきなのは、一般判定の失敗はたいていその行動の失敗を意味するのではなく、「別の結果を招く」ということです。成功しても失敗しても、物語は進み続けます。</font><br/><br/><em><font size="3">ex. 銃を手に入れるため、ネットで銃の購入方法を検索する。<br/>(判定成功)-&gt;「メールが1通届いた。中には電話番号がひとつ書かれている。どうする?」<br/>(判定失敗)-&gt;「銃を買う方法は見つからなかったが、おもちゃの銃を改造する動画を見つけた。どうする?」</font></em><br/><br/><strong><font size="5">抵抗判定: </font></strong><br/><font size="3">キャラクターがバッドステータスを受けている場合、自分の手番終了時にダイスを3個振ります。歯車の目が1つ出るごとに、任意のバッドステータスマーカーを1個取り除けます。</font><br/><br/><strong><font size="5">対抗判定:</font></strong><br/><font size="3">双方がそれぞれダイスを3個振って歯車の数を比べます。組み付きから抜け出す、PC同士の言い争いなど、GMが決められない場面で使えます。</font><br/><br/></div>
+<hr style="width:100%;clear:both;visibility:hidden;"/>
 </div>
 </div>
-  	</div>
-    
-  	<div id="footer">Create a <a target="_top" href="http:///">free web site</a> with <a target="_top" href="http:///" title="免費網站">Weebly</a></div>
-
-  </div>
-
 </div>
-<script type="text/javascript" src="files/theme/custom.js"></script>
-<script type="text/javascript" src="files/theme/mobile.js"></script>
-    <div id="customer-accounts-app"></div>
-    <script src="http://cdn11.editmysite.com/js/site/main-customer-accounts-site.js?buildtime=1234"></script>
-
-		
-	</body>
+<div id="footer">Create a <a href="http:///" target="_top">free web site</a> with <a href="http:///" target="_top" title="Free website">Weebly</a></div>
+</div>
+</div>
+<script src="files/theme/custom.js" type="text/javascript"></script>
+<script src="files/theme/mobile.js" type="text/javascript"></script>
+<div id="customer-accounts-app"></div>
+<script src="http://cdn11.editmysite.com/js/site/main-customer-accounts-site.js?buildtime=1234"></script>
+<script>
+/* 語言切換程式（通常不用改） */
+(function () {
+  var buttons = document.querySelectorAll("[data-set-lang]");
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    buttons.forEach(function (b) {
+      b.setAttribute("aria-pressed", b.dataset.setLang === lang ? "true" : "false");
+    });
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var lang = b.dataset.setLang;
+      setLang(lang);
+      var url = new URL(location.href);
+      url.searchParams.set("lang", lang === "zh-Hant" ? "zh" : lang);
+      history.replaceState(null, "", url);
+    });
+  });
+  setLang(document.documentElement.lang);
+})();
+</script></body>
 </html>

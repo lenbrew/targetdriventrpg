@@ -1,27 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Combat</title>
-
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0;">
-
-<script type="text/javascript" charset="utf-8">
+<html lang="zh-Hant">
+<head><script>
+/* 【語言設定】優先順序：網址 ?lang=en → 上次選過的語言 → 瀏覽器語言 → 中文（與個人網頁相同） */
+(function () {
+  var ok = ["zh-Hant", "en", "ja"];
+  var q = new URLSearchParams(location.search).get("lang");
+  var map = { zh: "zh-Hant", "zh-hant": "zh-Hant", "zh-tw": "zh-Hant", en: "en", ja: "ja" };
+  var lang = map[(q || "").toLowerCase()];
+  if (!lang) { try { lang = localStorage.getItem("lang"); } catch (e) {} }
+  if (ok.indexOf(lang) < 0) {
+    var nav = (navigator.language || "").toLowerCase();
+    lang = nav.indexOf("ja") === 0 ? "ja" : nav.indexOf("zh") === 0 ? "zh-Hant" : nav ? "en" : "zh-Hant";
+  }
+  document.documentElement.lang = lang;
+})();
+</script>
+<title>Combat</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="width=device-width, initial-scale=1.0;" name="viewport"/>
+<script charset="utf-8" type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function () {
 		var menuCapture = document.getElementById("nav").innerHTML;
 		document.getElementById("navmobile").innerHTML = document.getElementById("nav").innerHTML;
 	});
 </script>
-
-
-		
-		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="http://cdn11.editmysite.com/css/sites.css?buildtime=1234" />
-<link rel="stylesheet" type="text/css" href="http://cdn11.editmysite.com/css/old/fancybox.css?buildtime=1234" />
-<link rel="stylesheet" type="text/css" href="files/main_style.css?1782821284" title="wsite-theme-css" />
-<link href='http://cdn2.editmysite.com/fonts/Maven_Pro/font.css?2' rel='stylesheet' type='text/css' />
-
-<style type='text/css'>
+<link href="http://cdn11.editmysite.com/css/sites.css?buildtime=1234" id="wsite-base-style" rel="stylesheet" type="text/css"/>
+<link href="http://cdn11.editmysite.com/css/old/fancybox.css?buildtime=1234" rel="stylesheet" type="text/css"/>
+<link href="files/main_style.css?1782821284" rel="stylesheet" title="wsite-theme-css" type="text/css"/>
+<link href="http://cdn2.editmysite.com/fonts/Maven_Pro/font.css?2" rel="stylesheet" type="text/css"/>
+<style type="text/css">
 .wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
 #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
 .wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
@@ -67,16 +74,14 @@
 #wsite-content h2.wsite-product-title {}
 .wsite-product .wsite-product-price a {}
 }</style>
-
-		<script src='files/templateArtifacts.js?1743931075'></script>
+<script src="files/templateArtifacts.js?1743931075"></script>
 <script>
 var STATIC_BASE = '//cdn1.editmysite.com/';
 var ASSETS_BASE = '//cdn11.editmysite.com/';
 var STYLE_PREFIX = 'wsite';
 </script>
-<script src='https://cdn11.editmysite.com/js/jquery-1.8.3.min.js'></script>
-
-<script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script>
+<script src="https://cdn11.editmysite.com/js/jquery-1.8.3.min.js"></script>
+<script src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&amp;" type="text/javascript"></script>
 <script src="http://cdn11.editmysite.com/js/site/main.js?buildtime=1234"></script><script type="text/javascript">
 		function initCustomerAccountsModels() {
 					(function(){_W.setup_rpc({"url":"\/ajax\/api\/JsonRPC\/CustomerAccounts\/","actions":{"CustomerAccounts":[{"name":"login","len":2,"multiple":false,"standalone":false},{"name":"logout","len":0,"multiple":false,"standalone":false},{"name":"getSessionDetails","len":0,"multiple":false,"standalone":false},{"name":"getAccountDetails","len":0,"multiple":false,"standalone":false},{"name":"getOrders","len":0,"multiple":false,"standalone":false},{"name":"register","len":4,"multiple":false,"standalone":false},{"name":"emailExists","len":1,"multiple":false,"standalone":false},{"name":"passwordReset","len":1,"multiple":false,"standalone":false},{"name":"passwordUpdate","len":3,"multiple":false,"standalone":false},{"name":"validateSession","len":1,"multiple":false,"standalone":false}]},"namespace":"_W.CustomerAccounts.RPC"});
@@ -91,7 +96,7 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 			document.documentElement.initCustomerAccountsModels++
 		}
 		</script>
-		<script type="text/javascript"> _W = _W || {}; _W.securePrefix='UNSET'; </script><script>_W = _W || {};
+<script type="text/javascript"> _W = _W || {}; _W.securePrefix='UNSET'; </script><script>_W = _W || {};
 			_W.customerLocale = "en_US";
 			_W.storeName = null;
 			_W.isCheckoutReskin = false;
@@ -100,7 +105,7 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 			_W.storeEuPrivacyPolicyUrl = "";
 			com_currentSite = "239313511692856245";
 			com_userID = "23425996";</script><script type="text/javascript">_W.configDomain = "";</script><script>_W.relinquish && _W.relinquish()</script>
-<script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script><script> _W.themePlugins = [];</script><script type="text/javascript"> _W.recaptchaUrl = "https://www.google.com/recaptcha/api.js"; </script><script type="text/javascript"><!--
+<script src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&amp;" type="text/javascript"></script><script> _W.themePlugins = [];</script><script type="text/javascript"> _W.recaptchaUrl = "https://www.google.com/recaptcha/api.js"; </script><script type="text/javascript"><!--
 	var IS_ARCHIVE = 1;
 	
 	function initFlyouts(){
@@ -116,124 +121,114 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 	}
 //-->
 </script>
-		
-		
-	</head>
-	<body class="no-header-page  wsite-page-combat wsite-theme-light"><div id="wrapper">
+<style>
+/* ---------- 多語言 ----------
+   每段文字有三份：class="zh" / "en" / "ja"，只顯示目前語言那一份 */
+html:not([lang="zh-Hant"]) .zh,
+html:not([lang="en"]) .en,
+html:not([lang="ja"]) .ja { display: none !important; }
+html[lang="ja"] #wsite-content { font-family: "Noto Sans JP", -apple-system, "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif; }
 
-	<div id="navigation">
-    <div id="navigation-wrap">
-  	 	<div id="nav">
-	      <div class="sitename"><span class="wsite-logo">
-
-	
-	<span class="wsite-title-placeholder">&nbsp;</span><span style="display:none">
-	<span style="display:none">Target driven universal TRPG system - The journey</span>
-	</span>
-	
-
+.lang-switch { position: absolute; top: 18px; right: 20px; z-index: 1000; display: flex; gap: 4px; font-size: 13px; }
+.lang-switch button { border: 1px solid #ddd; background: #fff; color: #888; padding: 4px 10px;
+  border-radius: 999px; cursor: pointer; font: inherit; line-height: 1.4; }
+.lang-switch button[aria-pressed="true"] { border-color: #333; color: #333; }
+@media (max-width: 767px) { .lang-switch { position: fixed; top: auto; bottom: 14px; right: 14px; }
+  .lang-switch button { background: rgba(255,255,255,.95); padding: 6px 12px; } }
+</style></head>
+<body class="no-header-page wsite-page-combat wsite-theme-light"><nav aria-label="Language" class="lang-switch"><button data-set-lang="zh-Hant" type="button">中</button><button data-set-lang="en" type="button">EN</button><button data-set-lang="ja" type="button">日</button></nav><div id="wrapper">
+<div id="navigation">
+<div id="navigation-wrap">
+<div id="nav">
+<div class="sitename"><span class="wsite-logo">
+<span class="wsite-title-placeholder"> </span><span style="display:none">
+<span style="display:none">Target driven universal TRPG system - The journey</span>
+</span>
 </span></div>
-				<ul class="wsite-menu-default">
-						<li id="pg683889504346869554" class="wsite-menu-item-wrap">
-							<a
-										href="index.html"
-								class="wsite-menu-item"
-								>
+<ul class="wsite-menu-default">
+<li class="wsite-menu-item-wrap" id="pg683889504346869554">
+<a class="wsite-menu-item" href="index.html">
 								Home
 							</a>
-							
-						</li>
-						<li id="pg992754666127193064" class="wsite-menu-item-wrap">
-							<a
-										href="about.html"
-								class="wsite-menu-item"
-								>
+</li>
+<li class="wsite-menu-item-wrap" id="pg992754666127193064">
+<a class="wsite-menu-item" href="about.html">
 								About
 							</a>
-							
-						</li>
-						<li id="pg415759161248215329" class="wsite-menu-item-wrap">
-							<a
-										href="create-characters.html"
-								class="wsite-menu-item"
-								>
+</li>
+<li class="wsite-menu-item-wrap" id="pg415759161248215329">
+<a class="wsite-menu-item" href="create-characters.html">
 								Create characters
 							</a>
-							
-						</li>
-						<li id="pg970432202500041751" class="wsite-menu-item-wrap">
-							<a
-										href="dice-throw.html"
-								class="wsite-menu-item"
-								>
+</li>
+<li class="wsite-menu-item-wrap" id="pg970432202500041751">
+<a class="wsite-menu-item" href="dice-throw.html">
 								Dice throw
 							</a>
-							
-						</li>
-						<li id="active" class="wsite-menu-item-wrap">
-							<a
-										href="combat.html"
-								class="wsite-menu-item"
-								>
+</li>
+<li class="wsite-menu-item-wrap" id="active">
+<a class="wsite-menu-item" href="combat.html">
 								Combat
 							</a>
-							
-						</li>
-						<li id="pg424821511858632472" class="wsite-menu-item-wrap">
-							<a
-										href="the-journey.html"
-								class="wsite-menu-item"
-								>
+</li>
+<li class="wsite-menu-item-wrap" id="pg424821511858632472">
+<a class="wsite-menu-item" href="the-journey.html">
 								The Journey
 							</a>
-							
-						</li>
-				</ul>
-			</div>
-   	 	<div id="navmobile"></div>
-    </div>
-    <div id="mobile-close"></div>
-	</div>
-
-
-  <div id="main">
-
-    <div id="mobile-top">
-      <div id="mobile-open"></div>
-      <div class="sitename"><span class="wsite-logo">
-
-	
-	<span class="wsite-title-placeholder">&nbsp;</span><span style="display:none">
-	<span style="display:none">Target driven universal TRPG system - The journey</span>
-	</span>
-	
-
-</span></div>      
-    </div>
-
-  	<div id="content-wrapper">
-  		<div id="content"><div id="wsite-content" class="wsite-elements wsite-not-footer">
-	<div class="paragraph" style="text-align:left;"><span><span><strong><font size="5">&#25136;&#39717;</font></strong></span></span><br /><span>&#21407;&#21063;&#19978;&#20351;&#29992;&#20845;&#35282;&#26684;&#22320;&#22294;&#65292;&#20134;&#21487;&#20351;&#29992;&#22235;&#35282;&#26684;&#65292;&#20801;&#35377;&#23565;&#35282;&#31227;&#21205;&#12290;&#19968;&#20491;&#22238;&#21512;&#21487;&#20197;&#29992;6&#31186;&#37912;&#29702;&#35299;&#65292;&#20294;&#20677;&#20379;&#21443;&#32771;&#65292;&#19981;&#38656;&#36942;&#26044;&#22519;&#33879;&#23526;&#38555;&#30340;&#26178;&#38291;&#12290;</span><ol><li><span><span>&#22238;&#21512;&#27969;&#31243;&#65306;&#20998;&#28858;&#65319;&#65325;&#20596;&#21450;&#29609;&#23478;&#20596;&#12290;&#35222;&#24773;&#27841;&#27770;&#23450;&#20309;&#26041;&#20808;&#25915;&#65292;&#29609;&#23478;&#26041;&#20877;&#32771;&#24942;&#25136;&#22580;&#21450;&#34920;&#29694;&#40670;&#25976;&#27770;&#23450;&#38918;&#24207;</span></span>&#8203;</li><li><span><span>&#29609;&#23478;&#21205;&#20316;&#65306;&#27599;&#20301;&#29609;&#23478;&#37117;&#26377;&#19968;&#20491;&#25915;&#25802;&#21205;&#20316;&#12289;&#19968;&#20491;&#31227;&#21205;&#21205;&#20316;&#12289;&#19968;&#20491;&#27425;&#35201;&#21205;&#20316;&#20197;&#21450;&#20219;&#24847;&#30340;&#33258;&#30001;&#21205;&#20316;&#12290;</span></span></li><li><span><span>&#23556;&#31243;&#35336;&#31639;&#33287;&#38556;&#31001;&#24433;&#38911;</span></span></li><li><span><span>&#35282;&#33394;&#30340;&#29376;&#24907;</span></span></li><li><span><span>&#21015;&#34920;&#22806;&#34892;&#28858;&#30340;&#21028;&#23450;&#22522;&#28310;</span></span></li><li><span><span>&#25973;&#20154;&#30340;&#25976;&#20540;&#21443;&#32771;</span></span></li></ol></div>
-
+</li>
+</ul>
+</div>
+<div id="navmobile"></div>
+</div>
+<div id="mobile-close"></div>
+</div>
+<div id="main">
+<div id="mobile-top">
+<div id="mobile-open"></div>
+<div class="sitename"><span class="wsite-logo">
+<span class="wsite-title-placeholder"> </span><span style="display:none">
+<span style="display:none">Target driven universal TRPG system - The journey</span>
+</span>
+</span></div>
+</div>
+<div id="content-wrapper">
+<div id="content"><div class="wsite-elements wsite-not-footer" id="wsite-content">
+<div class="paragraph zh" style="text-align:left;"><span><span><strong><font size="5">戰鬥</font></strong></span></span><br/><span>原則上使用六角格地圖，亦可使用四角格，允許對角移動。一個回合可以用6秒鐘理解，但僅供參考，不需過於執著實際的時間。</span><ol><li><span><span>回合流程：分為ＧＭ側及玩家側。視情況決定何方先攻，玩家方再考慮戰場及表現點數決定順序</span></span>​</li><li><span><span>玩家動作：每位玩家都有一個攻擊動作、一個移動動作、一個次要動作以及任意的自由動作。</span></span></li><li><span><span>射程計算與障礙影響</span></span></li><li><span><span>角色的狀態</span></span></li><li><span><span>列表外行為的判定基準</span></span></li><li><span><span>敵人的數值參考</span></span></li></ol></div><div class="paragraph en" lang="en" style="text-align:left;"><strong><font size="5">Combat</font></strong><br/>A hex grid map is used by default, but a square grid works too; diagonal movement is allowed. A round can be thought of as 6 seconds, but that's just for reference; don't get hung up on real time.<ol><li>Round Flow: split into the GM side and the player side. Decide which side acts first depending on the situation; the player side then decides its order considering the battlefield and Performance Points</li><li>Player Actions: each player has one Attack action, one Move action, one Minor action, and any number of Free actions.</li><li>Range Calculation and Obstacles</li><li>Character Conditions</li><li>Guidelines for Off-List Actions</li><li>Reference Enemy Stats</li></ol></div><div class="paragraph ja" lang="ja" style="text-align:left;"><strong><font size="5">戦闘</font></strong><br/>原則としてヘックスマップを使用しますが、スクエアマップでも構いません（斜め移動可）。1ラウンドはおよそ6秒と考えてかまいませんが、あくまで目安であり、実際の時間にこだわる必要はありません。<ol><li>ラウンド進行：ＧＭ側とPL側に分かれます。状況に応じてどちらが先攻かを決め、PL側はさらに戦場とパフォーマンスポイントを考慮して順番を決めます</li><li>プレイヤーのアクション：各プレイヤーは攻撃アクション1回、移動アクション1回、マイナーアクション1回、および任意の数のフリーアクションを持ちます。</li><li>射程の計算と障害物の影響</li><li>キャラクターの状態</li><li>リスト外の行動の判定基準</li><li>敵の数値の目安</li></ol></div>
 <div><div style="height: 20px; overflow: hidden; width: 100%;"></div>
-<hr class="styled-hr" style="width:100%;"></hr>
+<hr class="styled-hr" style="width:100%;"/>
 <div style="height: 20px; overflow: hidden; width: 100%;"></div></div>
-
-<div class="paragraph" style="text-align:left;"><strong><font size="5">1. &#22238;&#21512;&#27969;&#31243;</font></strong><br />&#25136;&#39717;&#26178;&#38500;&#38750;&#36973;&#21463;&#31361;&#35186;&#25110;&#29305;&#21029;&#30340;&#25973;&#20154;&#65292;&#21542;&#21063;&#30001;&#29609;&#23478;&#20596;&#20808;&#21205;&#12290;&#35320;&#30332;&#25136;&#39717;&#26178;&#65292;&#20808;&#23559;&#31561;&#26044;&#25152;&#26377;&#29609;&#23478;&#35282;&#33394;&#12300;&#28436;&#12301;&#29305;&#25216;&#25976;&#37327;&#30340;&#34920;&#29694;&#40670;(PP)&#25918;&#33267;&#20849;&#29992;&#21312;&#12290;<br />&#30070;&#29609;&#23478;&#23565;&#24444;&#27492;&#30340;&#35282;&#33394;&#19981;&#29087;&#24713;&#26178;&#65288;&#31532;&#19968;&#22580;&#25136;&#39717;&#26178;&#65289;&#65292;&#21487;&#20197;&#24478;<span>&#26368;&#38752;&#36817;</span>GM&#24038;&#25163;&#37002;&#30340;&#31532;&#19968;&#20491;STR&#22411;&#35282;&#33394;&#38283;&#22987;&#65292;&#20197;&#36870;&#26178;&#37341;&#26041;&#24335;&#36914;&#34892;&#21205;&#20316;&#12290;<br />&#24453;&#29087;&#24713;&#24460;&#65292;&#21487;&#20197;&#30001;&#29609;&#23478;&#33258;&#34892;&#35342;&#35542;&#26412;&#22238;&#21512;&#30340;&#34892;&#21205;&#38918;&#24207;&#65292;&#28982;&#24460;&#20381;&#24207;&#34892;&#21205;&#12290;<br />&#30070;&#20219;&#19968;&#29609;&#23478;&#30340;&#22238;&#21512;&#38283;&#22987;&#26178;&#65292;&#23559;&#19968;&#26522;&#34920;&#29694;&#40670;(PP)&#25918;&#33267;&#20849;&#29992;&#21312;&#65292;&#33509;&#38656;&#35201;&#26045;&#25918;&#24517;&#27578;&#25216;&#65292;&#21063;&#23559;&#31561;&#26044;&#35442;&#24517;&#27578;&#25216;&#36027;&#29992;&#30340;PP&#31227;&#20986;&#20849;&#29992;&#21312;&#12290;PP&#22312;&#25136;&#39717;&#32080;&#26463;&#21069;&#26371;&#19968;&#30452;&#32047;&#31309;&#65292;&#20294;&#19978;&#38480;&#28858;12&#40670;&#12290;&#19968;&#22580;&#25136;&#39717;&#32080;&#26463;&#24460;PP&#27512;&#38646;&#12290;<br /><em>ex. &#21069;&#22235;&#21517;&#29609;&#23478;&#37117;&#27794;&#26377;&#20351;&#29992;PP&#65292;&#21063;&#31532;&#20116;&#21517;&#29609;&#23478;&#23601;&#26377;5&#40670;PP&#65292;&#21363;&#21487;&#19981;&#38920;&#25842;&#39600;&#26045;&#25918;&#31684;&#22285;&#20663;&#23475;&#25216;&#12290;</em><br /><br /><br /><strong><font size="5">2. &#29609;&#23478;&#21205;&#20316;</font></strong><br />&#27599;&#20491;&#29609;&#23478;&#27599;&#22238;&#21512;&#26377;&#19968;&#20491;&#31227;&#21205;&#21205;&#20316;&#65292;&#19968;&#20491;&#25915;&#25802;&#21205;&#20316;&#65292;&#19968;&#20491;&#27425;&#35201;&#21205;&#20316;&#65292;<span>&#21487;&#20197;&#25913;&#35722;&#38918;&#24207;&#65292;&#20294;&#19981;&#33021;&#20998;&#21106;&#65288;&#25563;&#21477;&#35441;&#35498;&#65292;&#19981;&#33021;&#12300;&#31227;&#21205;-&gt;&#25915;&#25802;-&gt;&#20877;&#31227;&#21205;&#12301;&#65292;&#23601;&#31639;&#20173;&#28982;&#26377;&#31227;&#21205;&#27493;&#25976;&#21097;&#19979;&#12290;&#65289;<br />&#31561;&#32026;&#19978;&#25915;&#25802;&gt;&#31227;&#21205;&gt;&#27425;&#35201;&gt;&#33258;&#30001;&#65292;&#21487;&#20197;&#29992;&#36611;&#39640;&#32026;&#30340;&#21205;&#20316;&#26178;&#27231;&#22519;&#34892;&#36611;&#20302;&#32026;&#30340;&#21205;&#20316;&#12290;</span><br /><br /><strong>&#25915;&#25802;&#21205;&#20316;&#65306;</strong>&#21253;&#21547;&#36817;&#25136;&#25915;&#25802;&#12289;&#23556;&#25802;&#20197;&#21450;&#20351;&#29992;&#25915;&#25802;&#38542;&#27573;&#30340;&#24517;&#27578;&#25216;<ul><li><span>&#36817;&#25136;&#25915;&#25802;&#21482;&#33021;&#25915;&#25802;&#37168;&#25509;&#30340;&#35282;&#33394;&#65292;&#22519;&#34892;&#12300;&#36817;&#25136;&#21028;&#23450;&#12301;&#27770;&#23450;&#20663;&#23475;</span></li><li><span>&#23556;&#25802;&#30340;&#23556;&#31243;&#28858;10&#26684;&#65292;&#33509;&#30446;&#27161;&#22312;&#23556;&#31243;&#20839;&#65292;&#22519;&#34892;&#12300;&#23556;&#25802;&#21028;&#23450;&#12301;&#27770;&#23450;&#20663;&#23475;</span></li></ul> &#25136;&#39717;&#26159;&#20132;&#25163;&#30340;&#27010;&#24565;&#65292;&#19968;&#27425;&#25842;&#39600;&#21363;&#20195;&#34920;&#21629;&#20013;&#33287;&#21542;&#20197;&#21450;&#23565;&#38617;&#26041;&#36896;&#25104;&#30340;&#20663;&#23475;&#12290;<br /><br /><strong>&#31227;&#21205;&#21205;&#20316;&#65306;</strong><span>&#31227;&#21205;&#35282;&#33394;&#26368;&#22810;&#31561;&#26044;&#36895;&#24230;&#30340;&#26684;&#25976;&#12290;&#38500;&#20102;&#38728;&#24039;&#29305;&#25216;&#30340;&#35282;&#33394;&#21487;&#20197;&#36328;&#36234;&#38556;&#31001;&#65292;&#38750;&#38728;&#24039;&#35282;&#33394;&#38656;&#32350;&#36942;&#38556;&#31001;&#12290;</span><br /><br /><strong>&#27425;&#35201;&#21205;&#20316;&#65306;</strong>&#21487;&#20197;&#36914;&#34892;&#38750;&#31227;&#21205;&#21205;&#20316;&#65292;&#20063;&#38750;&#25915;&#25802;&#21205;&#20316;&#30340;&#20854;&#20182;&#21205;&#20316;&#65292;&#21253;&#25324;&#21917;&#34277;&#27700;&#21644;&#26045;&#25918;&#22823;&#22810;&#25976;&#30340;&#24517;&#27578;&#25216;&#12290;<br /><br /><strong>&#33258;&#30001;&#21205;&#20316;&#65306;</strong>&#20132;&#35527;&#12289;&#26356;&#25563;&#27494;&#22120;&#12289;&#24565;&#21650;&#35486;&#12289;&#25361;&#25765;&#31561;&#31561;&#19981;&#24433;&#38911;&#25136;&#39717;&#25976;&#20540;&#30340;&#34892;&#28858;&#65292;&#21407;&#21063;&#19978;&#27794;&#26377;&#38480;&#21046;&#12290;<br /><br /><strong><font size="5">3. &#23556;&#31243;&#35336;&#31639;&#21450;&#38556;&#31001;&#24433;&#38911;</font></strong><br />&#33258;&#36523;&#25152;&#21344;&#30340;&#26684;&#23376;&#28858;&#23556;&#31243;0&#65292;&#21644;&#23556;&#31243;0&#37168;&#25509;&#30340;&#26684;&#23376;&#28858;&#23556;&#31243;1&#65292;&#20197;&#27492;&#39006;&#25512;&#12290;&#38656;&#27880;&#24847;&#33509;&#26684;&#23376;&#34987;&#20308;&#25818;&#65292;&#21063;&#35336;&#31639;&#23556;&#31243;&#26178;&#24517;&#38920;&#32350;&#36942;&#35442;&#26684;&#12290;<br /><br /><font size="5"><strong>4.&#35282;&#33394;&#30340;&#29376;&#24907;</strong></font><br /><strong>&#36000;&#38754;&#29376;&#24907;</strong>&#65306;&#26377;&#26248;&#30505;&#12289;&#32233;&#36895;&#12289;&#25345;&#32396;&#20663;&#23475;&#19977;&#31278;&#65292;&#26371;&#30090;&#21152;&#65292;&#24517;&#38920;&#20316;&#35905;&#20813;&#21028;&#23450;&#22238;&#24489;&#29376;&#24907;<ul><li><span>&#26248;&#30505;&#65306;&#35442;&#35282;&#33394;&#30340;&#21147;&#37327;&#12289;&#36895;&#24230;&#30342;&#28187;&#21322;&#65292;&#23567;&#25976;&#40670;&#25448;&#21435;&#65292;&#19988;&#19981;&#26371;&#22686;&#21152;PP&#12290;</span></li><li><span>&#32233;&#36895;&#65306;&#35282;&#33394;&#30340;&#36895;&#24230;&#28187;&#21322;&#65292;&#23567;&#25976;&#40670;&#25448;&#21435;&#65292;&#19988;&#19981;&#26371;&#29986;&#29983;PP&#12290;</span></li><li><span>&#25345;&#32396;&#20663;&#23475;&#65306;&#35442;&#35282;&#33394;&#22238;&#21512;&#38283;&#22987;&#26178;&#28187;&#23569;&#19968;&#40670;HP&#12290;</span>&#8203;</li></ul> <strong>&#26127;&#36855;&#65288;unconscious&#65289;</strong>&#65306;&#35282;&#33394;HP&#27512;&#38646;&#30340;&#29376;&#24907;&#65292;&#22833;&#21435;&#25152;&#26377;&#21205;&#20316;&#65292;&#30452;&#25509;&#33067;&#38626;&#25136;&#39717;&#12290;&#33509;HP&#22240;&#20219;&#20309;&#22240;&#32032;&#22238;&#21040;1&#20197;&#19978;&#65292;&#21063;&#21487;&#20197;&#36984;&#25799;&#26159;&#21542;&#37325;&#26032;&#21152;&#20837;&#25136;&#39717;&#12290;<br /><strong>&#27515;&#20129;&#65288;dead&#65289;</strong>&#65306;&#35282;&#33394;&#22312;HP&#27512;&#38646;&#26178;&#29609;&#23478;&#21487;&#20197;&#27770;&#23450;&#19981;&#38519;&#20837;&#26127;&#36855;&#65292;&#32780;&#26159;&#23436;&#25104;&#19968;&#20491;&#30446;&#27161;&#12290;&#33509;&#29609;&#23478;&#27770;&#23450;&#22914;&#27492;&#20570;&#65292;&#21063;&#35282;&#33394;&#22312;&#23436;&#25104;&#27492;&#30446;&#27161;&#24460;&#27515;&#20129;&#12290;&#65288;&#21487;&#36984;&#35215;&#21063;&#65289;<br /><br /><strong><font size="5">5. &#21015;&#34920;&#22806;&#34892;&#28858;&#30340;&#21028;&#23450;&#22522;&#28310;</font></strong><br />&#26412;&#31995;&#32113;&#26159;&#26997;&#31777;&#35215;&#21063;&#65292;&#25505;&#21462;&#30340;&#31934;&#31070;&#26159;&#21482;&#35201;&#31526;&#21512;&#35282;&#33394;&#25551;&#36848;&#12289;&#21512;&#29702;&#12289;&#25110;&#29978;&#33267;&#26159;&#29245;&#24230;&#36275;&#22816;&#65292;&#21363;&#21487;&#20316;&#20986;&#34920;&#20013;&#27794;&#26377;&#26126;&#21015;&#30340;&#21205;&#20316;&#12290;&#19968;&#20491;&#26126;&#39023;&#30340;&#20363;&#23376;&#26159;&#12300;STR&#22411;&#12301;&#30340;&#35282;&#33394;&#23559;&#25163;&#19978;&#30340;&#30707;&#38957;&#25842;&#20986;&#65292;&#38614;&#28982;&#39636;&#21147;&#22411;&#30340;&#21015;&#34920;&#20013;&#27794;&#26377;&#23556;&#25802;&#30340;&#29305;&#25216;&#65292;&#20294;&#19999;&#25842;&#30707;&#38957;&#26159;&#24456;&#21512;&#29702;&#30340;&#25136;&#39717;&#34892;&#21205;&#65292;&#25152;&#20197;&#27794;&#26377;&#29702;&#30001;&#31105;&#27490;&#36889;&#27171;&#30340;&#34892;&#28858;&#65292;&#35215;&#21063;&#38754;&#30340;&#34389;&#29702;&#26041;&#24335;&#28858;&#36914;&#34892;&#23556;&#25802;&#21028;&#23450;&#21069;&#20808;&#36914;&#34892;&#12300;&#19968;&#33324;&#21028;&#23450;&#12301;&#25110;&#12300;&#23565;&#25239;&#21028;&#23450;&#12301;&#65292;&#38627;&#24230;&#35222;&#22580;&#22320;&#12289;&#36317;&#38626;&#27770;&#23450;&#65292;&#33509;&#25104;&#21151;&#65292;&#20877;&#36914;&#34892;&#12300;&#23556;&#25802;&#21028;&#23450;&#12301;&#12290;<br /><br />&#25563;&#35328;&#20043;&#65292;&#31995;&#32113;&#20013;&#26126;&#23450;&#25928;&#26524;&#30340;&#34892;&#21205;&#30452;&#25509;&#35222;&#28858;&#25104;&#21151;&#65307;&#31995;&#32113;&#26410;&#26126;&#23450;&#25928;&#26524;&#30340;&#34892;&#21205;&#21063;&#38656;&#20808;&#36914;&#34892;&#12300;&#19968;&#33324;&#21028;&#23450;&#12301;&#27770;&#23450;&#25104;&#21151;&#33287;&#21542;&#12290;<br /><br /><strong><font size="5">6. &#25973;&#20154;&#25976;&#20540;&#21443;&#32771;</font></strong><br /><span><span>&#25973;&#20154;&#25976;&#20540;&#20677;&#20379;&#21443;&#32771;&#65292;GM&#26377;&#27402;&#20219;&#24847;&#35519;&#25972;&#25976;&#20540;&#12290;</span><br /><br /><span><strong>&#38620;&#39770;&#22411;</strong></span><br /><span>&#25136;&#39717;&#21147; 1</span><br /><span>&#36895;&#24230; &nbsp; &nbsp; 4</span><br /><span>HP&nbsp; &nbsp; &nbsp; &nbsp;1</span><br /><span>&#27794;&#26377;&#24517;&#27578;&#25216;&#12290;</span></span><br />&#38620;&#39770;&#25915;&#25802;&#26178;&#21487;&#20197;&#21512;&#20341;&#25976;&#38587;&#19968;&#36215;&#25842;&#39600;&#35222;&#28858;&#19968;&#27425;&#25915;&#25802;&#31680;&#30465;&#26178;&#38291;&#12290;&#19999;&#20986;&#30340;&#39607;&#39631;&#39600;&#21487;&#20197;&#20219;&#24847;&#20998;&#37197;&#32102;&#26377;&#21443;&#33287;&#25915;&#25802;&#30340;&#38620;&#39770;&#12290;<br />&#22686;&#21152;PP&#21407;&#21063;: &#25973;&#20154;&#30340;&#22238;&#21512;&#38283;&#22987;&#26178;&#65292;&#38620;&#39770;&#27599;&#36229;&#36942;&#29609;&#23478;&#35282;&#33394;&#19968;&#38587;&#65292;&#23601;&#22686;&#21152;&#19968;&#40670;PP&#12290;<br /><br /><span><span><strong>&#20013;&#38957;&#30446;&#22411;</strong></span><br /><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#39636;&#21147;&#22411; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#26234;&#21147;&#22411; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#36895;&#24230;&#22411;</span><br /><span>&#25136;&#39717;&#21147;&nbsp; &nbsp; &nbsp; 8&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6</span><br /><span>&#36895;&#24230; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5</span><br /><span>HP&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;12&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 7&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 9</span><br /><span>&#29305;&#25216; &nbsp; &nbsp; &nbsp; &nbsp; &#25802;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#24039;&#12289;&#23556;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#24039;</span><br />&#24517;&#27578;&#25216;&nbsp; &nbsp; &nbsp; 1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2</span><br /><br /><strong>&#22823;&#38957;&#30446;&#22411;</strong><br /><span><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#39636;&#21147;&#22411; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#26234;&#21147;&#22411; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#36895;&#24230;&#22411;</span><br /><span>&#25136;&#39717;&#21147;&nbsp; &nbsp; &nbsp;12&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;8</span><br /><span>&#36895;&#24230; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6</span><br /><span>HP&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 20&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 14&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 18</span><br /><span>&#29305;&#25216; &nbsp; &nbsp; &nbsp; &nbsp; &#25802;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#24039;&#12289;&#23556;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#24039;</span><br /><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#28436; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#28436;&#28436;&#28436; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#28436;&#28436;</span><br /><span>&#24517;&#27578;&#25216;&#19981;&#38480;&#21046;&#25976;&#37327;&#12290;</span></span><br /><br /><br /><br /><br /><br /><br /><br /><br /></div>
+<div class="paragraph zh" style="text-align:left;"><strong><font size="5">1. 回合流程</font></strong><br/>戰鬥時除非遭受突襲或特別的敵人，否則由玩家側先動。觸發戰鬥時，先將等於所有玩家角色「演」特技數量的表現點(PP)放至共用區。<br/>當玩家對彼此的角色不熟悉時（第一場戰鬥時），可以從<span>最靠近</span>GM左手邊的第一個STR型角色開始，以逆時針方式進行動作。<br/>待熟悉後，可以由玩家自行討論本回合的行動順序，然後依序行動。<br/>當任一玩家的回合開始時，將一枚表現點(PP)放至共用區，若需要施放必殺技，則將等於該必殺技費用的PP移出共用區。PP在戰鬥結束前會一直累積，但上限為12點。一場戰鬥結束後PP歸零。<br/><em>ex. 前四名玩家都沒有使用PP，則第五名玩家就有5點PP，即可不須擲骰施放範圍傷害技。</em><br/><br/><br/><strong><font size="5">2. 玩家動作</font></strong><br/>每個玩家每回合有一個移動動作，一個攻擊動作，一個次要動作，<span>可以改變順序，但不能分割（換句話說，不能「移動-&gt;攻擊-&gt;再移動」，就算仍然有移動步數剩下。）<br/>等級上攻擊&gt;移動&gt;次要&gt;自由，可以用較高級的動作時機執行較低級的動作。</span><br/><br/><strong>攻擊動作：</strong>包含近戰攻擊、射擊以及使用攻擊階段的必殺技<ul><li><span>近戰攻擊只能攻擊鄰接的角色，執行「近戰判定」決定傷害</span></li><li><span>射擊的射程為10格，若目標在射程內，執行「射擊判定」決定傷害</span></li></ul> 戰鬥是交手的概念，一次擲骰即代表命中與否以及對雙方造成的傷害。<br/><br/><strong>移動動作：</strong><span>移動角色最多等於速度的格數。除了靈巧特技的角色可以跨越障礙，非靈巧角色需繞過障礙。</span><br/><br/><strong>次要動作：</strong>可以進行非移動動作，也非攻擊動作的其他動作，包括喝藥水和施放大多數的必殺技。<br/><br/><strong>自由動作：</strong>交談、更換武器、念咒語、挑撥等等不影響戰鬥數值的行為，原則上沒有限制。<br/><br/><strong><font size="5">3. 射程計算及障礙影響</font></strong><br/>自身所占的格子為射程0，和射程0鄰接的格子為射程1，以此類推。需注意若格子被佔據，則計算射程時必須繞過該格。<br/><br/><font size="5"><strong>4.角色的狀態</strong></font><br/><strong>負面狀態</strong>：有暈眩、緩速、持續傷害三種，會疊加，必須作豁免判定回復狀態<ul><li><span>暈眩：該角色的力量、速度皆減半，小數點捨去，且不會增加PP。</span></li><li><span>緩速：角色的速度減半，小數點捨去，且不會產生PP。</span></li><li><span>持續傷害：該角色回合開始時減少一點HP。</span>​</li></ul> <strong>昏迷（unconscious）</strong>：角色HP歸零的狀態，失去所有動作，直接脫離戰鬥。若HP因任何因素回到1以上，則可以選擇是否重新加入戰鬥。<br/><strong>死亡（dead）</strong>：角色在HP歸零時玩家可以決定不陷入昏迷，而是完成一個目標。若玩家決定如此做，則角色在完成此目標後死亡。（可選規則）<br/><br/><strong><font size="5">5. 列表外行為的判定基準</font></strong><br/>本系統是極簡規則，採取的精神是只要符合角色描述、合理、或甚至是爽度足夠，即可作出表中沒有明列的動作。一個明顯的例子是「STR型」的角色將手上的石頭擲出，雖然體力型的列表中沒有射擊的特技，但丟擲石頭是很合理的戰鬥行動，所以沒有理由禁止這樣的行為，規則面的處理方式為進行射擊判定前先進行「一般判定」或「對抗判定」，難度視場地、距離決定，若成功，再進行「射擊判定」。<br/><br/>換言之，系統中明定效果的行動直接視為成功；系統未明定效果的行動則需先進行「一般判定」決定成功與否。<br/><br/><strong><font size="5">6. 敵人數值參考</font></strong><br/><span><span>敵人數值僅供參考，GM有權任意調整數值。</span><br/><br/><span><strong>雜魚型</strong></span><br/><span>戰鬥力 1</span><br/><span>速度     4</span><br/><span>HP       1</span><br/><span>沒有必殺技。</span></span><br/>雜魚攻擊時可以合併數隻一起擲骰視為一次攻擊節省時間。丟出的骷髏骰可以任意分配給有參與攻擊的雜魚。<br/>增加PP原則: 敵人的回合開始時，雜魚每超過玩家角色一隻，就增加一點PP。<br/><br/><span><span><strong>中頭目型</strong></span><br/><span>              體力型       智力型         速度型</span><br/><span>戰鬥力      8                  4                  6</span><br/><span>速度          4                  3                  5</span><br/><span>HP             12                7                  9</span><br/><span>特技         擊              巧、射            巧</span><br/>必殺技      1                 3                  2</span><br/><br/><strong>大頭目型</strong><br/><span><span>              體力型       智力型         速度型</span><br/><span>戰鬥力     12                 6                   8</span><br/><span>速度          5                  4                  6</span><br/><span>HP            20                14                18</span><br/><span>特技         擊              巧、射            巧</span><br/><span>                  演             演演演           演演</span><br/><span>必殺技不限制數量。</span></span><br/><br/><br/><br/><br/><br/><br/><br/><br/></div><div class="paragraph en" lang="en" style="text-align:left;"><strong><font size="5">1. Round Flow</font></strong><br/>In combat, the player side acts first unless ambushed or facing a special enemy. When combat starts, first place Performance Points (PP) equal to the number of "Perform" talents among all player characters into the shared pool.<br/>When players aren't yet familiar with each other's characters (in the first combat), start with the first STR type character closest to the GM's left and act counterclockwise.<br/>Once everyone is familiar, the players can discuss the action order for the round themselves, then act in that order.<br/>At the start of any player's turn, place one Performance Point (PP) into the shared pool. To use a Signature Move, remove PP equal to that move's cost from the pool. PP keeps accumulating until the end of combat, up to a maximum of 12. PP resets to zero after each combat.<br/><em>ex. If the first four players use no PP, the fifth player has 5 PP and can unleash an area damage move without rolling.</em><br/><br/><br/><strong><font size="5">2. Player Actions</font></strong><br/>Each player gets one Move action, one Attack action, and one Minor action per turn. They can be taken in any order, but cannot be split (in other words, you can't "move -&gt; attack -&gt; move again", even if you have movement left).<br/>The ranking is Attack &gt; Move &gt; Minor &gt; Free; you can use a higher-ranked action slot to perform a lower-ranked action.<br/><br/><strong>Attack action:</strong> includes melee attacks, ranged attacks, and Signature Moves used in the attack phase<ul><li>Melee attacks can only target adjacent characters; make a "Melee Roll" to determine damage</li><li>Ranged attacks have a range of 10 squares; if the target is in range, make a "Ranged Roll" to determine damage</li></ul> Combat works as an exchange: a single roll determines whether you hit and the damage dealt to both sides.<br/><br/><strong>Move action:</strong> move your character up to a number of squares equal to Speed. Characters with the Agile talent can cross obstacles; characters without it must go around.<br/><br/><strong>Minor action:</strong> any action that is neither a Move nor an Attack, including drinking a potion and using most Signature Moves.<br/><br/><strong>Free action:</strong> talking, switching weapons, chanting incantations, taunting, and other things that don't affect combat stats. As a rule, there is no limit.<br/><br/><strong><font size="5">3. Range Calculation and Obstacles</font></strong><br/>The square you occupy is Range 0, squares adjacent to Range 0 are Range 1, and so on. Note that occupied squares must be routed around when counting range.<br/><br/><font size="5"><strong>4. Character Conditions</strong></font><br/><strong>Negative conditions</strong>: there are three, Stunned, Slowed, and Damage over Time (DoT). They stack, and you must make a Saving Roll to recover<ul><li>Stunned: the character's Power and Speed are both halved, rounded down, and it does not add PP.</li><li>Slowed: the character's Speed is halved, rounded down, and it does not generate PP.</li><li>Damage over Time: the character loses 1 HP at the start of its turn.</li></ul> <strong>Unconscious</strong>: the state of a character at 0 HP. It loses all actions and is removed from combat. If its HP returns to 1 or more for any reason, it may choose whether to rejoin the fight.<br/><strong>Dead</strong>: when a character reaches 0 HP, the player may decide that instead of falling unconscious, the character completes one objective. If the player chooses this, the character dies after completing that objective. (Optional rule)<br/><br/><strong><font size="5">5. Guidelines for Off-List Actions</font></strong><br/>This is a minimalist system. The spirit is that as long as it fits the character's description, makes sense, or is simply cool enough, a character can take actions not explicitly listed. An obvious example is a "STR type" character throwing a rock in hand. Although the STR type has no Shoot talent, throwing a rock is a perfectly reasonable combat action, so there's no reason to forbid it. Rules-wise, make a "General Roll" or "Opposed Roll" before the Ranged Roll, with difficulty based on terrain and distance; if it succeeds, then make the "Ranged Roll".<br/><br/>In other words, actions whose effects are defined by the system automatically succeed; actions whose effects aren't defined require a "General Roll" first to determine success.<br/><br/><strong><font size="5">6. Reference Enemy Stats</font></strong><br/>Enemy stats are for reference only; the GM may adjust them freely.<br/><br/><strong>Minion</strong><br/>Combat Power 1<br/>Speed          4<br/>HP              1<br/>No Signature Moves.<br/>When minions attack, several can roll together as a single attack to save time. Skulls rolled can be assigned freely to any minions that took part in the attack.<br/>PP gain rule: at the start of the enemy turn, gain 1 PP for each minion in excess of the number of player characters.<br/><br/><strong>Mid-Boss</strong><br/>                STR type        INT type        DEX type<br/>Combat Power    8               4               6<br/>Speed           4               3               5<br/>HP              12              7               9<br/>Talents         Knock           Agile, Shoot    Agile<br/>Sig. Moves      1               3               2<br/><br/><strong>Big Boss</strong><br/>                STR type        INT type        DEX type<br/>Combat Power    12              6               8<br/>Speed           5               4               6<br/>HP              20              14              18<br/>Talents         Knock           Agile, Shoot    Agile<br/>                Perform         Perform x3      Perform x2<br/>No limit on the number of Signature Moves.<br/><br/><br/><br/><br/><br/><br/><br/><br/></div><div class="paragraph ja" lang="ja" style="text-align:left;"><strong><font size="5">1. ラウンド進行</font></strong><br/>戦闘では、奇襲を受けた場合や特別な敵の場合を除き、PL側が先に行動します。戦闘が発生したら、まず全プレイヤーキャラクターが持つ「演」特技の数に等しいパフォーマンスポイント(PP)を共有エリアに置きます。<br/>プレイヤーがお互いのキャラクターに慣れていないうち（最初の戦闘）は、GMの左手側に最も近い最初のSTR型キャラクターから始めて、反時計回りに行動します。<br/>慣れてきたら、プレイヤー同士でそのラウンドの行動順を話し合って決め、順番に行動してもかまいません。<br/>いずれかのプレイヤーの手番が始まるたびに、パフォーマンスポイント(PP)を1つ共有エリアに置きます。必殺技を使う場合は、その必殺技のコストに等しいPPを共有エリアから取り除きます。PPは戦闘終了まで蓄積され続けますが、上限は12点です。戦闘が1回終わるとPPは0に戻ります。<br/><em>ex. 最初の4人のプレイヤーが誰もPPを使わなければ、5人目のプレイヤーは5点のPPを持つことになり、ダイスを振らずに範囲ダメージ技を使えます。</em><br/><br/><br/><strong><font size="5">2. プレイヤーのアクション</font></strong><br/>各プレイヤーは毎ラウンド、移動アクション1回、攻撃アクション1回、マイナーアクション1回を行えます。順番は入れ替えられますが、分割はできません（言い換えれば、移動力が残っていても「移動-&gt;攻撃-&gt;再び移動」とすることはできません）。<br/>アクションの格は攻撃&gt;移動&gt;マイナー&gt;フリーの順で、格の高いアクションのタイミングで格の低いアクションを行うことができます。<br/><br/><strong>攻撃アクション：</strong>近接攻撃、射撃、および攻撃タイミングの必殺技の使用が含まれます<ul><li>近接攻撃は隣接するキャラクターしか攻撃できず、「近接判定」を行ってダメージを決定します</li><li>射撃の射程は10マスで、対象が射程内にいれば「射撃判定」を行ってダメージを決定します</li></ul> 戦闘は「打ち合い」の概念で、1回のダイスロールが命中の可否と双方に与えるダメージを表します。<br/><br/><strong>移動アクション：</strong>キャラクターを最大で速度に等しいマス数だけ移動させます。「巧」特技を持つキャラクターは障害物を越えられますが、それ以外のキャラクターは障害物を迂回する必要があります。<br/><br/><strong>マイナーアクション：</strong>移動アクションでも攻撃アクションでもないその他のアクションを行えます。ポーションを飲む、ほとんどの必殺技を使う、などが含まれます。<br/><br/><strong>フリーアクション：</strong>会話、武器の持ち替え、呪文の詠唱、挑発など、戦闘の数値に影響しない行為で、原則として制限はありません。<br/><br/><strong><font size="5">3. 射程の計算と障害物の影響</font></strong><br/>自分のいるマスが射程0、射程0に隣接するマスが射程1となり、以下同様に数えます。マスが占有されている場合、射程を計算する際はそのマスを迂回しなければならない点に注意してください。<br/><br/><font size="5"><strong>4.キャラクターの状態</strong></font><br/><strong>バッドステータス</strong>：スタン、鈍足、継続ダメージの3種類があり、重複します。回復するには抵抗判定を行う必要があります<ul><li>スタン：そのキャラクターの力と速度はいずれも半分（端数切り捨て）になり、PPを増やしません。</li><li>鈍足：キャラクターの速度が半分（端数切り捨て）になり、PPを生み出しません。</li><li>継続ダメージ：そのキャラクターの手番開始時にHPが1点減少します。</li></ul> <strong>気絶（unconscious）</strong>：キャラクターのHPが0になった状態です。すべてのアクションを失い、ただちに戦闘から離脱します。何らかの理由でHPが1以上に戻った場合、戦闘に復帰するかどうかを選べます。<br/><strong>死亡（dead）</strong>：キャラクターのHPが0になったとき、プレイヤーは気絶する代わりに、ひとつの目標を成し遂げることを選べます。そうした場合、キャラクターはその目標を成し遂げた後に死亡します。（オプションルール）<br/><br/><strong><font size="5">5. リスト外の行動の判定基準</font></strong><br/>本システムは極めてシンプルなルールであり、キャラクターの設定に合っている、筋が通っている、あるいは単に十分に爽快であれば、表に明記されていないアクションも行えるという精神をとっています。わかりやすい例は「STR型」のキャラクターが手に持った石を投げつける場合です。体力型のリストには射撃の特技はありませんが、石を投げるのはごく自然な戦闘行動なので、禁止する理由はありません。ルール上の処理としては、射撃判定の前に「一般判定」または「対抗判定」を行い、難易度は場所や距離によって決めます。成功したら「射撃判定」を行います。<br/><br/>言い換えれば、システムで効果が明記されている行動はそのまま成功とみなし、効果が明記されていない行動はまず「一般判定」を行って成否を決めます。<br/><br/><strong><font size="5">6. 敵の数値の目安</font></strong><br/>敵の数値はあくまで目安であり、GMは自由に数値を調整できます。<br/><br/><strong>雑魚タイプ</strong><br/>戦闘力 1<br/>速度     4<br/>HP       1<br/>必殺技なし。<br/>雑魚が攻撃する際は、時間短縮のため数体をまとめてダイスを振り、1回の攻撃とみなしてもかまいません。出たドクロの目は、攻撃に参加した雑魚に自由に割り振れます。<br/>PP増加の原則: 敵の手番開始時、雑魚の数がプレイヤーキャラクターの数を1体上回るごとに、PPを1点増やします。<br/><br/><strong>中ボスタイプ</strong><br/>              体力型       知力型         速度型<br/>戦闘力      8                  4                  6<br/>速度          4                  3                  5<br/>HP             12                7                  9<br/>特技         撃              巧、射            巧<br/>必殺技      1                 3                  2<br/><br/><strong>大ボスタイプ</strong><br/>              体力型       知力型         速度型<br/>戦闘力     12                 6                   8<br/>速度          5                  4                  6<br/>HP            20                14                18<br/>特技         撃              巧、射            巧<br/>                  演             演演演           演演<br/>必殺技の数は無制限。<br/><br/><br/><br/><br/><br/><br/><br/><br/></div>
 </div>
 </div>
-  	</div>
-    
-  	<div id="footer">Create a <a target="_top" href="http:///">free web site</a> with <a target="_top" href="http:///" title="免費網站">Weebly</a></div>
-
-  </div>
-
 </div>
-<script type="text/javascript" src="files/theme/custom.js"></script>
-<script type="text/javascript" src="files/theme/mobile.js"></script>
-    <div id="customer-accounts-app"></div>
-    <script src="http://cdn11.editmysite.com/js/site/main-customer-accounts-site.js?buildtime=1234"></script>
-
-		
-	</body>
+<div id="footer">Create a <a href="http:///" target="_top">free web site</a> with <a href="http:///" target="_top" title="Free website">Weebly</a></div>
+</div>
+</div>
+<script src="files/theme/custom.js" type="text/javascript"></script>
+<script src="files/theme/mobile.js" type="text/javascript"></script>
+<div id="customer-accounts-app"></div>
+<script src="http://cdn11.editmysite.com/js/site/main-customer-accounts-site.js?buildtime=1234"></script>
+<script>
+/* 語言切換程式（通常不用改） */
+(function () {
+  var buttons = document.querySelectorAll("[data-set-lang]");
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    buttons.forEach(function (b) {
+      b.setAttribute("aria-pressed", b.dataset.setLang === lang ? "true" : "false");
+    });
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var lang = b.dataset.setLang;
+      setLang(lang);
+      var url = new URL(location.href);
+      url.searchParams.set("lang", lang === "zh-Hant" ? "zh" : lang);
+      history.replaceState(null, "", url);
+    });
+  });
+  setLang(document.documentElement.lang);
+})();
+</script></body>
 </html>

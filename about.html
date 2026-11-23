@@ -1,27 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>About</title>
-
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0;">
-
-<script type="text/javascript" charset="utf-8">
+<html lang="zh-Hant">
+<head><script>
+/* 【語言設定】優先順序：網址 ?lang=en → 上次選過的語言 → 瀏覽器語言 → 中文（與個人網頁相同） */
+(function () {
+  var ok = ["zh-Hant", "en", "ja"];
+  var q = new URLSearchParams(location.search).get("lang");
+  var map = { zh: "zh-Hant", "zh-hant": "zh-Hant", "zh-tw": "zh-Hant", en: "en", ja: "ja" };
+  var lang = map[(q || "").toLowerCase()];
+  if (!lang) { try { lang = localStorage.getItem("lang"); } catch (e) {} }
+  if (ok.indexOf(lang) < 0) {
+    var nav = (navigator.language || "").toLowerCase();
+    lang = nav.indexOf("ja") === 0 ? "ja" : nav.indexOf("zh") === 0 ? "zh-Hant" : nav ? "en" : "zh-Hant";
+  }
+  document.documentElement.lang = lang;
+})();
+</script>
+<title>About</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="width=device-width, initial-scale=1.0;" name="viewport"/>
+<script charset="utf-8" type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function () {
 		var menuCapture = document.getElementById("nav").innerHTML;
 		document.getElementById("navmobile").innerHTML = document.getElementById("nav").innerHTML;
 	});
 </script>
-
-
-		
-		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="http://cdn11.editmysite.com/css/sites.css?buildtime=1234" />
-<link rel="stylesheet" type="text/css" href="http://cdn11.editmysite.com/css/old/fancybox.css?buildtime=1234" />
-<link rel="stylesheet" type="text/css" href="files/main_style.css?1782821284" title="wsite-theme-css" />
-<link href='http://cdn2.editmysite.com/fonts/Maven_Pro/font.css?2' rel='stylesheet' type='text/css' />
-
-<style type='text/css'>
+<link href="http://cdn11.editmysite.com/css/sites.css?buildtime=1234" id="wsite-base-style" rel="stylesheet" type="text/css"/>
+<link href="http://cdn11.editmysite.com/css/old/fancybox.css?buildtime=1234" rel="stylesheet" type="text/css"/>
+<link href="files/main_style.css?1782821284" rel="stylesheet" title="wsite-theme-css" type="text/css"/>
+<link href="http://cdn2.editmysite.com/fonts/Maven_Pro/font.css?2" rel="stylesheet" type="text/css"/>
+<style type="text/css">
 .wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
 #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
 .wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
@@ -67,16 +74,14 @@
 #wsite-content h2.wsite-product-title {}
 .wsite-product .wsite-product-price a {}
 }</style>
-
-		<script src='files/templateArtifacts.js?1743931075'></script>
+<script src="files/templateArtifacts.js?1743931075"></script>
 <script>
 var STATIC_BASE = '//cdn1.editmysite.com/';
 var ASSETS_BASE = '//cdn11.editmysite.com/';
 var STYLE_PREFIX = 'wsite';
 </script>
-<script src='https://cdn11.editmysite.com/js/jquery-1.8.3.min.js'></script>
-
-<script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script>
+<script src="https://cdn11.editmysite.com/js/jquery-1.8.3.min.js"></script>
+<script src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&amp;" type="text/javascript"></script>
 <script src="http://cdn11.editmysite.com/js/site/main.js?buildtime=1234"></script><script type="text/javascript">
 		function initCustomerAccountsModels() {
 					(function(){_W.setup_rpc({"url":"\/ajax\/api\/JsonRPC\/CustomerAccounts\/","actions":{"CustomerAccounts":[{"name":"login","len":2,"multiple":false,"standalone":false},{"name":"logout","len":0,"multiple":false,"standalone":false},{"name":"getSessionDetails","len":0,"multiple":false,"standalone":false},{"name":"getAccountDetails","len":0,"multiple":false,"standalone":false},{"name":"getOrders","len":0,"multiple":false,"standalone":false},{"name":"register","len":4,"multiple":false,"standalone":false},{"name":"emailExists","len":1,"multiple":false,"standalone":false},{"name":"passwordReset","len":1,"multiple":false,"standalone":false},{"name":"passwordUpdate","len":3,"multiple":false,"standalone":false},{"name":"validateSession","len":1,"multiple":false,"standalone":false}]},"namespace":"_W.CustomerAccounts.RPC"});
@@ -91,7 +96,7 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 			document.documentElement.initCustomerAccountsModels++
 		}
 		</script>
-		<script type="text/javascript"> _W = _W || {}; _W.securePrefix='UNSET'; </script><script>_W = _W || {};
+<script type="text/javascript"> _W = _W || {}; _W.securePrefix='UNSET'; </script><script>_W = _W || {};
 			_W.customerLocale = "en_US";
 			_W.storeName = null;
 			_W.isCheckoutReskin = false;
@@ -100,7 +105,7 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 			_W.storeEuPrivacyPolicyUrl = "";
 			com_currentSite = "239313511692856245";
 			com_userID = "23425996";</script><script type="text/javascript">_W.configDomain = "";</script><script>_W.relinquish && _W.relinquish()</script>
-<script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script><script> _W.themePlugins = [];</script><script type="text/javascript"> _W.recaptchaUrl = "https://www.google.com/recaptcha/api.js"; </script><script type="text/javascript"><!--
+<script src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&amp;" type="text/javascript"></script><script> _W.themePlugins = [];</script><script type="text/javascript"> _W.recaptchaUrl = "https://www.google.com/recaptcha/api.js"; </script><script type="text/javascript"><!--
 	var IS_ARCHIVE = 1;
 	
 	function initFlyouts(){
@@ -116,118 +121,110 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
 	}
 //-->
 </script>
-		
-		
-	</head>
-	<body class="no-header-page  wsite-page-about wsite-theme-light"><div id="wrapper">
+<style>
+/* ---------- 多語言 ----------
+   每段文字有三份：class="zh" / "en" / "ja"，只顯示目前語言那一份 */
+html:not([lang="zh-Hant"]) .zh,
+html:not([lang="en"]) .en,
+html:not([lang="ja"]) .ja { display: none !important; }
+html[lang="ja"] #wsite-content { font-family: "Noto Sans JP", -apple-system, "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif; }
 
-	<div id="navigation">
-    <div id="navigation-wrap">
-  	 	<div id="nav">
-	      <div class="sitename"><span class="wsite-logo">
-
-	
-	<span class="wsite-title-placeholder">&nbsp;</span><span style="display:none">
-	<span style="display:none">Target driven universal TRPG system - The journey</span>
-	</span>
-	
-
+.lang-switch { position: absolute; top: 18px; right: 20px; z-index: 1000; display: flex; gap: 4px; font-size: 13px; }
+.lang-switch button { border: 1px solid #ddd; background: #fff; color: #888; padding: 4px 10px;
+  border-radius: 999px; cursor: pointer; font: inherit; line-height: 1.4; }
+.lang-switch button[aria-pressed="true"] { border-color: #333; color: #333; }
+@media (max-width: 767px) { .lang-switch { position: fixed; top: auto; bottom: 14px; right: 14px; }
+  .lang-switch button { background: rgba(255,255,255,.95); padding: 6px 12px; } }
+</style></head>
+<body class="no-header-page wsite-page-about wsite-theme-light"><nav aria-label="Language" class="lang-switch"><button data-set-lang="zh-Hant" type="button">中</button><button data-set-lang="en" type="button">EN</button><button data-set-lang="ja" type="button">日</button></nav><div id="wrapper">
+<div id="navigation">
+<div id="navigation-wrap">
+<div id="nav">
+<div class="sitename"><span class="wsite-logo">
+<span class="wsite-title-placeholder"> </span><span style="display:none">
+<span style="display:none">Target driven universal TRPG system - The journey</span>
+</span>
 </span></div>
-				<ul class="wsite-menu-default">
-						<li id="pg683889504346869554" class="wsite-menu-item-wrap">
-							<a
-										href="index.html"
-								class="wsite-menu-item"
-								>
+<ul class="wsite-menu-default">
+<li class="wsite-menu-item-wrap" id="pg683889504346869554">
+<a class="wsite-menu-item" href="index.html">
 								Home
 							</a>
-							
-						</li>
-						<li id="active" class="wsite-menu-item-wrap">
-							<a
-										href="about.html"
-								class="wsite-menu-item"
-								>
+</li>
+<li class="wsite-menu-item-wrap" id="active">
+<a class="wsite-menu-item" href="about.html">
 								About
 							</a>
-							
-						</li>
-						<li id="pg415759161248215329" class="wsite-menu-item-wrap">
-							<a
-										href="create-characters.html"
-								class="wsite-menu-item"
-								>
+</li>
+<li class="wsite-menu-item-wrap" id="pg415759161248215329">
+<a class="wsite-menu-item" href="create-characters.html">
 								Create characters
 							</a>
-							
-						</li>
-						<li id="pg970432202500041751" class="wsite-menu-item-wrap">
-							<a
-										href="dice-throw.html"
-								class="wsite-menu-item"
-								>
+</li>
+<li class="wsite-menu-item-wrap" id="pg970432202500041751">
+<a class="wsite-menu-item" href="dice-throw.html">
 								Dice throw
 							</a>
-							
-						</li>
-						<li id="pg605745235253759488" class="wsite-menu-item-wrap">
-							<a
-										href="combat.html"
-								class="wsite-menu-item"
-								>
+</li>
+<li class="wsite-menu-item-wrap" id="pg605745235253759488">
+<a class="wsite-menu-item" href="combat.html">
 								Combat
 							</a>
-							
-						</li>
-						<li id="pg424821511858632472" class="wsite-menu-item-wrap">
-							<a
-										href="the-journey.html"
-								class="wsite-menu-item"
-								>
+</li>
+<li class="wsite-menu-item-wrap" id="pg424821511858632472">
+<a class="wsite-menu-item" href="the-journey.html">
 								The Journey
 							</a>
-							
-						</li>
-				</ul>
-			</div>
-   	 	<div id="navmobile"></div>
-    </div>
-    <div id="mobile-close"></div>
-	</div>
-
-
-  <div id="main">
-
-    <div id="mobile-top">
-      <div id="mobile-open"></div>
-      <div class="sitename"><span class="wsite-logo">
-
-	
-	<span class="wsite-title-placeholder">&nbsp;</span><span style="display:none">
-	<span style="display:none">Target driven universal TRPG system - The journey</span>
-	</span>
-	
-
-</span></div>      
-    </div>
-
-  	<div id="content-wrapper">
-  		<div id="content"><div id="wsite-content" class="wsite-elements wsite-not-footer">
-	<div class="paragraph" style="text-align:left;"><span><strong><font size="5">&#30446;&#27161;&#39493;&#21205;&#30340;TRPG&#31995;&#32113;</font></strong></span><br /><br /><font size="3">&#24310;&#20280;&#38321;&#35712;: <a href="http://tdsgame.org/TRPG/index.htm" target="_blank"><strong><font color="#da4444">&#20309;&#35586;TRPG</font></strong></a>&nbsp; &nbsp;(by&#22855;&#24187;&#20462;&#22763;&#26371;)</font><br /><br /><font size="3"><span>TRPG&#31995;&#32113;&#35373;&#35336;&#36890;&#24120;&#24478;&#20841;&#20491;&#26041;&#21521;&#33879;&#25163;: &#19990;&#30028;&#35264;&#12289;&#35282;&#33394;&#12290;&#21069;&#32773;&#21253;&#25324;&#40845;&#33287;&#22320;&#19979;&#22478;&#12289;&#40657;&#26263;&#19990;&#30028;&#12289;&#21508;&#31278;&#21407;&#20316;&#34893;&#29983;TRPG&#65288;&#22914;&#26481;&#26041;&#21315;&#24187;&#25220;&#65289;&#31561;&#65307;&#24460;&#32773;&#30340;&#20195;&#34920;&#21063;&#28858;GURPS&#12289;&#20197;&#21450;&#21508;&#31278;&#31777;&#26131;&#31995;&#32113;&#65288;&#22914;RISUS&#65289;&#12290;&#21069;&#32773;&#35731;GM&#19981;&#24517;&#22810;&#36027;&#21767;&#33292;&#35299;&#37323;&#19990;&#30028;&#35264;&#65292;&#29609;&#23478;&#21487;&#20197;&#33258;&#28982;&#34701;&#20837;&#20854;&#20013;&#65292;&#20854;&#38480;&#21046;&#24615;&#26159;&#32570;&#40670;&#20063;&#26159;&#20778;&#40670;&#65307;&#24460;&#32773;&#38614;&#28982;&#19981;&#38480;&#21046;&#25925;&#20107;&#30340;&#39006;&#22411;&#65292;&#20294;GM&#24517;&#38920;&#21516;&#26178;&#34389;&#29702;&#19990;&#30028;&#35264;&#30340;&#35299;&#37323;&#12289;&#35282;&#33394;&#32972;&#26223;&#12289;&#35282;&#33394;&#25976;&#20540;&#20197;&#21450;&#25925;&#20107;&#65292;&#38614;&#28982;&#25793;&#26377;&#33258;&#30001;&#24230;&#65292;&#21371;&#38750;&#24120;&#32771;&#39511;GM&#30340;&#21151;&#21147;&#12290;</span><br /><br /><span>&#37027;&#40636;&#65292;&#33021;&#21542;&#26377;&#19968;&#20491;&#25793;&#26377;&#21109;&#35282;&#21644;&#19990;&#30028;&#35264;&#33258;&#30001;&#24230;&#65292;&#35215;&#21063;&#31777;&#21934;&#30340;&#21516;&#26178;&#65292;&#36996;&#33021;&#28187;&#23569;GM&#24037;&#20316;&#30340;&#36774;&#27861;&#65311;<br /><br /><span>&#24456;&#22810;&#25925;&#20107;&#30340;&#20027;&#35282;&#32676;&#37117;&#22240;&#25793;&#26377;&#20849;&#21516;&#30340;&#30446;&#27161;&#32858;&#22312;&#19968;&#36215;&#12290;&#28023;&#36042;&#29579;&#30340;&#30446;&#27161;&#26159;&#19968;&#20491;&#22823;&#31192;&#23542;&#65292;HxH&#30340;&#30446;&#27161;&#26159;&#32771;&#21462;&#29557;&#20154;&#32887;&#29031;&#65292;&#36855;&#38695;&#20043;&#23376;&#30340;&#30446;&#27161;&#26159;&#25512;&#32763;&#32113;&#24481;&#20027;&#30340;&#32113;&#27835;&#65292;&#23601;&#31639;&#27599;&#20491;&#35282;&#33394;&#30340;&#21205;&#27231;&#37117;&#19981;&#21516;&#65292;&#20294;&#37117;&#26397;&#21521;&#21516;&#19968;&#20491;&#30446;&#27161;&#20986;&#30332;&#12290;&#30070;&#28982;&#38568;&#33879;&#25925;&#20107;&#25512;&#36914;&#65292;&#30446;&#27161;&#20063;&#38568;&#20043;&#25913;&#35722;&#65292;&#22914;&#32771;&#21462;&#29557;&#20154;&#22519;&#29031;&#20043;&#24460;&#22235;&#20491;&#20154;&#23601;&#20998;&#36947;&#25562;&#37987;&#65292;&#20294;&#33509;&#26377;&#20102;&#21516;&#27171;&#30340;&#30446;&#27161;&#65292;&#20182;&#20497;&#30340;&#21629;&#36939;&#21448;&#26371;&#20877;&#27425;&#20132;&#37679;&#12290;&#25152;&#20197;&#65292;&#26412;&#31995;&#32113;&#20006;&#38750;&#24478;&#19990;&#30028;&#35264; / &#35282;&#33394;&#33879;&#25163;&#65292;&#32780;&#26159;&#24478;&#30446;&#27161;&#21644;&#21205;&#27231;&#33879;&#25163;&#65292;&#21516;&#26178;&#34389;&#29702;&#25925;&#20107;&#21644;&#35282;&#33394;&#65292;&#30465;&#30053;&#25976;&#20540;&#21644;&#35282;&#33394;&#35373;&#23450;&#30340;&#23565;&#25033;&#65292;&#35731;&#21109;&#35282;&#26178;&#33457;&#36027;&#30340;&#26178;&#38291;&#21644;&#31934;&#21147;&#37117;&#33021;&#19981;&#28010;&#36027;&#30340;&#29992;&#22312;&#21127;&#26412;&#20043;&#20013;&#12290;</span></span><br /><br />&#21644;&#20854;&#20182;&#31995;&#32113;&#35282;&#33394;&#26368;&#22823;&#30340;&#19981;&#21516;&#65292;&#25110;&#35377;&#29992;&#23526;&#20363;&#20358;&#35299;&#37323;&#26371;&#27604;&#36611;&#23481;&#26131;&#29702;&#35299;:<br />DnD&#65306;&#31359;&#33016;&#30002;&#12289;&#25345;&#21152;2&#38263;&#21133;&#30340;&#25136;&#22763;<br />the Journey&#65306;&#28858;&#20102;&#21521;&#40845;&#22577;&#20167;&#32780;&#36367;&#19978;&#26053;&#31243;&#30340;&#25136;&#22763;</font><br /><br /><font size="3"><span>&#19981;&#36942;&#30070;&#28982;&#22823;&#24133;&#30465;&#30053;&#25976;&#20540;&#23601;&#19981;&#36969;&#21512;&#21916;&#27489;&#38013;&#30740;&#35215;&#21063;&#30340;&#29609;&#23478;&#12290;&#29609;&#24471;&#38283;&#24515;&#25165;&#26159;&#26368;&#39640;&#21407;&#21063;&#65292;&#22914;&#26524;&#20320;&#19981;&#24076;&#26395;&#22312;&#25976;&#23383;&#19978;&#33457;&#22826;&#22810;&#21151;&#22827;&#65292;&#24819;&#23560;&#27880;&#22312;&#35282;&#33394;&#30340;&#22609;&#36896;&#19978;&#65292;&#37027;&#40636;&#26412;&#31995;&#32113;&#25110;&#35377;&#21487;&#20197;&#25104;&#28858;&#20320;&#30340;&#21478;&#19968;&#20491;&#36984;&#25799;&#12290;</span></font><br /><br /></div>
+</li>
+</ul>
+</div>
+<div id="navmobile"></div>
+</div>
+<div id="mobile-close"></div>
+</div>
+<div id="main">
+<div id="mobile-top">
+<div id="mobile-open"></div>
+<div class="sitename"><span class="wsite-logo">
+<span class="wsite-title-placeholder"> </span><span style="display:none">
+<span style="display:none">Target driven universal TRPG system - The journey</span>
+</span>
+</span></div>
+</div>
+<div id="content-wrapper">
+<div id="content"><div class="wsite-elements wsite-not-footer" id="wsite-content">
+<div class="paragraph zh" style="text-align:left;"><span><strong><font size="5">目標驅動的TRPG系統</font></strong></span><br/><br/><font size="3">延伸閱讀: <a href="http://tdsgame.org/TRPG/index.htm" target="_blank"><strong><font color="#da4444">何謂TRPG</font></strong></a>   (by奇幻修士會)</font><br/><br/><font size="3"><span>TRPG系統設計通常從兩個方向著手: 世界觀、角色。前者包括龍與地下城、黑暗世界、各種原作衍生TRPG（如東方千幻抄）等；後者的代表則為GURPS、以及各種簡易系統（如RISUS）。前者讓GM不必多費唇舌解釋世界觀，玩家可以自然融入其中，其限制性是缺點也是優點；後者雖然不限制故事的類型，但GM必須同時處理世界觀的解釋、角色背景、角色數值以及故事，雖然擁有自由度，卻非常考驗GM的功力。</span><br/><br/><span>那麼，能否有一個擁有創角和世界觀自由度，規則簡單的同時，還能減少GM工作的辦法？<br/><br/><span>很多故事的主角群都因擁有共同的目標聚在一起。海賊王的目標是一個大秘寶，HxH的目標是考取獵人職照，迷霧之子的目標是推翻統御主的統治，就算每個角色的動機都不同，但都朝向同一個目標出發。當然隨著故事推進，目標也隨之改變，如考取獵人執照之後四個人就分道揚鑣，但若有了同樣的目標，他們的命運又會再次交錯。所以，本系統並非從世界觀 / 角色著手，而是從目標和動機著手，同時處理故事和角色，省略數值和角色設定的對應，讓創角時花費的時間和精力都能不浪費的用在劇本之中。</span></span><br/><br/>和其他系統角色最大的不同，或許用實例來解釋會比較容易理解:<br/>DnD：穿胸甲、持加2長劍的戰士<br/>the Journey：為了向龍報仇而踏上旅程的戰士</font><br/><br/><font size="3"><span>不過當然大幅省略數值就不適合喜歡鑽研規則的玩家。玩得開心才是最高原則，如果你不希望在數字上花太多功夫，想專注在角色的塑造上，那麼本系統或許可以成為你的另一個選擇。</span></font><br/><br/></div><div class="paragraph en" lang="en" style="text-align:left;"><strong><font size="5">A Goal-Driven TRPG System</font></strong><br/><br/><font size="3">Further reading: <a href="http://tdsgame.org/TRPG/index.htm" target="_blank"><strong><font color="#da4444">What is a TRPG?</font></strong></a>   (by Fantasy Monastery)</font><br/><br/><font size="3">TRPG system design usually starts from one of two directions: the setting, or the characters. The former includes Dungeons &amp; Dragons, World of Darkness, and all kinds of TRPGs based on existing works (such as Touhou Senpensho); representatives of the latter are GURPS and various lightweight systems (such as RISUS). With the former, the GM doesn't need to spend much breath explaining the world, and players can slip into it naturally; its restrictiveness is both a weakness and a strength. The latter doesn't limit what kind of story you tell, but the GM has to handle explaining the setting, character backgrounds, character stats, and the story all at once. It offers freedom, but really puts the GM's skill to the test.<br/><br/>So, is there a way to have freedom in both character creation and setting, keep the rules simple, and still reduce the GM's workload?<br/><br/>In many stories, the protagonists come together because they share a common goal. In One Piece the goal is a great treasure; in HxH (Hunter x Hunter) it's earning a Hunter License; in Mistborn it's overthrowing the rule of the Lord Ruler. Even though every character has a different motivation, they all set out toward the same goal. Of course, as the story progresses the goal changes too. For example, after passing the Hunter Exam the four of them go their separate ways, but once they share a goal again, their fates cross once more. So instead of starting from the setting or the characters, this system starts from goals and motivations, handling the story and the characters at the same time. It skips matching stats to character concepts, so the time and energy spent on character creation all goes into the scenario instead of being wasted.<br/><br/>The biggest difference from characters in other systems may be easiest to explain with an example:<br/>DnD: A fighter wearing a breastplate and wielding a +2 longsword<br/>the Journey: A fighter who set out on a journey to take revenge on a dragon</font><br/><br/><font size="3">Of course, cutting out most of the numbers makes this system a poor fit for players who love digging into rules. Having fun is the highest principle. If you don't want to spend too much effort on numbers and would rather focus on building your character, this system might be another option for you.</font><br/><br/></div><div class="paragraph ja" lang="ja" style="text-align:left;"><strong><font size="5">目標駆動型TRPGシステム</font></strong><br/><br/><font size="3">関連記事: <a href="http://tdsgame.org/TRPG/index.htm" target="_blank"><strong><font color="#da4444">TRPGとは</font></strong></a>   (by奇幻修士會)</font><br/><br/><font size="3">TRPGシステムの設計は、通常「世界観」と「キャラクター」という二つの方向から着手されます。前者にはダンジョンズ＆ドラゴンズ、ワールド・オブ・ダークネス、各種の原作付きTRPG（東方千幻抄など）があり、後者の代表としてはGURPSや各種の簡易システム（RISUSなど）が挙げられます。前者はGMが世界観の説明に言葉を尽くす必要がなく、プレイヤーも自然に入り込めますが、その制約は欠点であると同時に長所でもあります。後者は物語のジャンルを限定しない一方で、GMは世界観の説明、キャラクターの背景、キャラクターの数値、そして物語を同時に処理しなければなりません。自由度はあるものの、GMの腕前が大いに試されます。<br/><br/>では、キャラクター作成と世界観の自由度を持ち、ルールがシンプルでありながら、GMの負担も減らせる方法はないものでしょうか？<br/><br/>多くの物語の主人公たちは、共通の目標を持つことで集まっています。ONE PIECEの目標はひとつの大秘宝、HUNTER×HUNTERの目標はハンター資格の取得、ミストボーンの目標は支配王の統治を覆すこと。たとえキャラクターごとに動機が異なっていても、みな同じ目標に向かって出発するのです。もちろん物語が進むにつれて目標も変わっていきます。たとえばハンター資格を取得した後、4人はそれぞれの道を歩み始めますが、同じ目標を持てば、彼らの運命は再び交わります。そこで本システムは世界観やキャラクターからではなく、目標と動機から着手し、物語とキャラクターを同時に扱います。数値とキャラクター設定の対応付けを省くことで、キャラクター作成に費やす時間と労力を無駄なくシナリオの中で活かせるようにしています。<br/><br/>他のシステムのキャラクターとの最大の違いは、実例で説明するとわかりやすいかもしれません:<br/>DnD：胸当てを着け、+2ロングソードを持つ戦士<br/>the Journey：竜に復讐するために旅立った戦士</font><br/><br/><font size="3">とはいえ、数値を大幅に省いている以上、ルールを突き詰めるのが好きなプレイヤーには向いていません。楽しく遊ぶことこそが最高の原則です。数字にあまり手間をかけたくない、キャラクター造形に集中したいという方にとって、本システムはもうひとつの選択肢になるかもしれません。</font><br/><br/></div>
 </div>
 </div>
-  	</div>
-    
-  	<div id="footer">Create a <a target="_top" href="http:///">free web site</a> with <a target="_top" href="http:///" title="免費網站">Weebly</a></div>
-
-  </div>
-
 </div>
-<script type="text/javascript" src="files/theme/custom.js"></script>
-<script type="text/javascript" src="files/theme/mobile.js"></script>
-    <div id="customer-accounts-app"></div>
-    <script src="http://cdn11.editmysite.com/js/site/main-customer-accounts-site.js?buildtime=1234"></script>
-
-		
-	</body>
+<div id="footer">Create a <a href="http:///" target="_top">free web site</a> with <a href="http:///" target="_top" title="Free website">Weebly</a></div>
+</div>
+</div>
+<script src="files/theme/custom.js" type="text/javascript"></script>
+<script src="files/theme/mobile.js" type="text/javascript"></script>
+<div id="customer-accounts-app"></div>
+<script src="http://cdn11.editmysite.com/js/site/main-customer-accounts-site.js?buildtime=1234"></script>
+<script>
+/* 語言切換程式（通常不用改） */
+(function () {
+  var buttons = document.querySelectorAll("[data-set-lang]");
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    buttons.forEach(function (b) {
+      b.setAttribute("aria-pressed", b.dataset.setLang === lang ? "true" : "false");
+    });
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var lang = b.dataset.setLang;
+      setLang(lang);
+      var url = new URL(location.href);
+      url.searchParams.set("lang", lang === "zh-Hant" ? "zh" : lang);
+      history.replaceState(null, "", url);
+    });
+  });
+  setLang(document.documentElement.lang);
+})();
+</script></body>
 </html>
