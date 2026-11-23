@@ -1,0 +1,11 @@
+{
+  "name": "The Journey - Target driven universal TRPG system",
+  "short_name": "The Journey",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#ed5448",
+  "background_color": "#ffffff",
+  "display": "browser"
+}
